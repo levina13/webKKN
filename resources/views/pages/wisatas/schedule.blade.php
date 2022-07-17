@@ -1,6 +1,17 @@
 @extends('layouts.public')
 @section('layout_title', 'Daftar Pesanan')
 @section('layout_content')
+		<p class="mt-3">
+			Lihatlah pemandangan indah
+			<br />
+			yang belum Anda lihat sebelumnya
+		</p>
+		{{-- <a href="{{ route('public.list_wisata') }}" class="btn btn-get-started px-4 mt-4"> --}}
+			{{-- Destinasi Wisata --}}
+		{{-- </a> --}}
+	</header>
+<main>
+
     <section class="section-details-header details-page-header"></section>
     <section class="section-details-content details-page-content">
         <div class="container">
@@ -73,8 +84,7 @@
             </div>
         </div>
     </div>        
-
-
+</main>
 @endsection
 @section('layout_script')
     <!-- Barcode -->

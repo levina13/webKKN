@@ -1,44 +1,56 @@
 @extends('layouts.public')
 @section('layout_title')
 @section('layout_content')
-        <section class="section-details-header details-page-header"></section>
-        <section class="section-details-content details-page-content">
-            <div class="container">
-                <div class="row">
-                    <div class="col p-3 p-lg-0">
-                        <nav>
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item">
-                                    Destinasi Wisata
-                                </li>
-                                <li class="breadcrumb-item">
-                                    {{ $wisata->nama }}
-                                </li>
-                                <li class="breadcrumb-item active">
-                                    Lokasi
-                                </li>
-                            </ol>
-                        </nav>
-                    </div>
+		<p class="mt-3">
+			Lihatlah pemandangan indah
+			<br />
+			yang belum Anda lihat sebelumnya
+		</p>
+		{{-- <a href="{{ route('public.list_wisata') }}" class="btn btn-get-started px-4 mt-4"> --}}
+			{{-- Destinasi Wisata --}}
+		{{-- </a> --}}
+	</header>
+<main>
+
+    <section class="section-details-header details-page-header"></section>
+    <section class="section-details-content details-page-content">
+        <div class="container">
+            <div class="row">
+                <div class="col p-3 p-lg-0">
+                    <nav>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                Destinasi Wisata
+                            </li>
+                            <li class="breadcrumb-item">
+                                {{ $wisata->nama }}
+                            </li>
+                            <li class="breadcrumb-item active">
+                                Lokasi
+                            </li>
+                        </ol>
+                    </nav>
                 </div>
-                <div class="row">
-                    <div class="col-12 pl-lg-0">
-                        <div class="card card-details">
-                            <div class="row">
-                                <div class="col-12">
-                                    <h1>{{ $wisata->nama }}</h1>
-                                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 pl-lg-0">
+                    <div class="card card-details">
+                        <div class="row">
+                            <div class="col-12">
+                                <h1>{{ $wisata->nama }}</h1>
                             </div>
-                            <div class="gallery mt-3">
-                                <div class="xzoom-container">
-                                    <div class="w-100 travel-details-map" id="map"></div>
-                                </div>
+                        </div>
+                        <div class="gallery mt-3">
+                            <div class="xzoom-container">
+                                <div class="w-100 travel-details-map" id="map"></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
+</main>
 @endsection
 @section('layout_script')
 <script>

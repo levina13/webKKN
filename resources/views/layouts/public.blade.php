@@ -28,21 +28,27 @@
 				<span class="navbar-toggler-icon"></span>
 			</button>
 
-			<div class="collapse navbar-collapse" id="navb">
-				<ul class="navbar-nav ml-auto d-block" >
-					@if (Auth::check())
-						<li class="nav-item mx-md-2">
-							<a href="{{ route('jadwal.index') }}" class="nav-link active">Pesanan Saya</a>
-						</li>
-					@endif
+			<div class="collapse navbar-collapse" id="navb" style="float: right; display:inline-block">
+				<ul class="navbar-nav ml-auto mr-4" >
+					<li class="nav-item ">
+						<a href="{{ route('kuliner') }}" class="nav-link active">Kuliner</a>
+					</li>
+					<li class="nav-item ">
+						<a href="{{ route('sejarah') }}" class="nav-link active">Sejarah</a>
+					</li>
+					<li class="nav-item ">
+						<a href="{{ route('listBerita') }}" class="nav-link active">Berita</a>
+					</li>
+					<li class="nav-item">
+						<a href="{{ route('galeri') }}" class="nav-link active">Galeri</a>
+					</li>
 				</ul>
-
-
 				<!-- Mobile Button -->
 				<form class="form-inline d-block d-md-none">
 					<!-- <a href="#" data-toggle="dropdown" class="btn btn-login my-2 my-sm-0" type="button">
 						Hi, User!
 					</a> -->
+
 					@if (Auth::check())
 						<li class="nav-item dropdown btn btn-login w-100 my-2 my-sm-0 d-flex">
 							<button href="#" class="nav-link dropdown-toggle btn btn-login btn-block text-center align-content-center justify-content-center" id="navbardrop" data-toggle="dropdown">
@@ -95,27 +101,14 @@
 			</div>
 		</nav>
 	</div>
-
     <!-- Header -->
 	<header class="text-center">
 		<h1>
-			Cari Tujuan Wisata Terbaik
-			<br />
-			Hanya Beberapa Klik
+			Wisata Sumber Banteng
 		</h1>
-		<p class="mt-3">
-			Lihatlah pemandangan indah
-			<br />
-			yang belum Anda lihat sebelumnya
-		</p>
-		{{-- <a href="{{ route('public.list_wisata') }}" class="btn btn-get-started px-4 mt-4"> --}}
-			{{-- Destinasi Wisata --}}
-		{{-- </a> --}}
-	</header>
 
-	<main>
-		@yield('layout_content')
-	</main>
+	@yield('layout_content')
+
 
  
 
