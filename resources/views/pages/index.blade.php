@@ -5,7 +5,7 @@
 		<div class="mt-6">
 			<div class="row-fluid  d-flex justify-content-center mt-4">
 				<div class="col-lg-6 col-sm-10 col-md-8">
-					<iframe width="90%" height="250vh" src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1">
+					<iframe width="80%" height="300vh" src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1">
 					</iframe>		
 				</div>
 			</div>
@@ -117,5 +117,28 @@
 				</div>
 			</div>
 		</section>
+
+		<section class="section-testimonial-heading mb-0" id="testimonialHeading">
+			<div class="container">
+				<div class="row">
+					<div class="col text-center">
+						<h2>Peta Menuju Lokasi</h2>
+
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="section section-testimonial-content" id="testimonialContent" style="margin-top: -420px">
+					<div class="mt-4 mb-4 text-center">
+			
+						<div class="row-fluid d-flex justify-content-center">
+							<div class="col-lg-6 col-sm-10 col-md-8">
+								<iframe width="80%" height="300vh"  id="gmap_canvas" src="https://maps.google.com/maps?q=Sumber%20Banteng,%20Tempurejo,%20Kec.%20Pesantren,%20Kabupaten%20Kediri,%20Jawa%20Timur%2064138&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="2" scrolling="no" marginheight="0" marginwidth="0">
+								</iframe>
+							</div>
+						</div>
+					</div>
+		</section>
+
 	</main>
 @endsection

@@ -28,19 +28,19 @@
 				<span class="navbar-toggler-icon"></span>
 			</button>
 
-			<div class="collapse navbar-collapse" id="navb" style="float: right; display:inline-block">
+			<div class="collapse navbar-collapse" id="navb" style="float: right">
 				<ul class="navbar-nav ml-auto mr-4" >
-					<li class="nav-item ">
-						<a href="{{ route('kuliner') }}" class="nav-link active">Kuliner</a>
+					<li class="nav-item text-center">
+						<a href="{{ route('kuliner') }}" class="nav-link ">Kuliner</a>
 					</li>
-					<li class="nav-item ">
-						<a href="{{ route('sejarah') }}" class="nav-link active">Sejarah</a>
+					<li class="nav-item text-center">
+						<a href="{{ route('sejarah') }}" class="nav-link ">Sejarah</a>
 					</li>
-					<li class="nav-item ">
-						<a href="{{ route('listBerita') }}" class="nav-link active">Berita</a>
+					<li class="nav-item text-center">
+						<a href="{{ route('listBerita') }}" class="nav-link ">Berita</a>
 					</li>
-					<li class="nav-item">
-						<a href="{{ route('galeri') }}" class="nav-link active">Galeri</a>
+					<li class="nav-item text-center">
+						<a href="{{ route('galeri') }}" class="nav-link ">Galeri</a>
 					</li>
 				</ul>
 				<!-- Mobile Button -->
