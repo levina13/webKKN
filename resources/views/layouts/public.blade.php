@@ -30,16 +30,20 @@
 
 			<div class="collapse navbar-collapse" id="navb" style="float: right">
 				<ul class="navbar-nav ml-auto mr-4" >
-					<li class="nav-item text-center">
+					<li class="nav-item text-center {{(request()->routeIs('index'))?'active':''}} font-weight-bold">
+						<a href="{{ route('index') }}" class="nav-link ">Home</a>
+					</li>
+
+					<li class="nav-item text-center {{(request()->routeIs('kuliner'))?'active':''}} font-weight-bold">
 						<a href="{{ route('kuliner') }}" class="nav-link ">Kuliner</a>
 					</li>
-					<li class="nav-item text-center">
+					<li class="nav-item text-center {{(request()->routeIs('sejarah'))?'active':''}} font-weight-bold">
 						<a href="{{ route('sejarah') }}" class="nav-link ">Sejarah</a>
 					</li>
-					<li class="nav-item text-center">
+					<li class="nav-item text-center {{(request()->routeIs('listBerita'))?'active':''}} font-weight-bold">
 						<a href="{{ route('listBerita') }}" class="nav-link ">Berita</a>
 					</li>
-					<li class="nav-item text-center">
+					<li class="nav-item text-center {{(request()->routeIs('galeri'))?'active':''}} font-weight-bold">
 						<a href="{{ route('galeri') }}" class="nav-link ">Galeri</a>
 					</li>
 				</ul>
