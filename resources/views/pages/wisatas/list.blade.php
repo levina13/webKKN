@@ -1,5 +1,6 @@
 @extends('layouts.public')
 @section('layout_title', 'Daftar Wisata')
+@section('page_title', 'List wisata')
 @section('layout_content')
 		<p class="mt-3">
 			Lihatlah pemandangan indah

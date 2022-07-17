@@ -1,5 +1,6 @@
 @extends('layouts.public')
 @section('layout_title', 'Home')
+@section('page_title', 'Wisata Sumber Banteng')
 @section('layout_content')
 
 		<div class="mt-6">

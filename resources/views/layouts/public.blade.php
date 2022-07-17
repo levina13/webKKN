@@ -108,7 +108,7 @@
     <!-- Header -->
 	<header class="text-center">
 		<h1>
-			Wisata Sumber Banteng
+			@yield('page_title')
 		</h1>
 
 	@yield('layout_content')

@@ -1,5 +1,6 @@
 @extends('layouts.public')
 @section('layout_title', $wisata->nama )
+@section('page_title', 'Wisata Sumber Banteng')
 @section('layout_content')
 		<p class="mt-3">
 			Lihatlah pemandangan indah
