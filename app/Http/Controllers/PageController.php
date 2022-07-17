@@ -60,4 +60,17 @@ class PageController extends Controller
             'wisata'    => $wisata
         ]);
     }
+    public function kuliner(){
+        return view('pages.wisatas.kuliner');
+    }
+    public function sejarah(){
+        return view('pages.wisatas.sejarah');
+    }
+    public function listBerita(){
+        return view('pages.wisatas.berita.berita_index');
+    }
+    public function galeri()
+    {
+        return view('pages.wisatas.galeri');
+    }
 }
