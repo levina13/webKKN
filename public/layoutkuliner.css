@@ -1,0 +1,28 @@
+@charset "utf-8";
+
+@import url("font-awesome.min.css");
+@import url("framework.css");
+
+.number
+{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.medium
+{
+    display: inline-block;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("https://food.grab.com/static/images/icons/icon-star.svg");
+}
+
+.infoitem
+{
+width: 16px;
+height: 16px;
+flex-shrink: 0;
+margin-right: 6px;
+}
