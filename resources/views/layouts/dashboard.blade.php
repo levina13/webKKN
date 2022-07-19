@@ -177,6 +177,32 @@
                         <span class="sidebar-text">Objek Wisata</span>
                     </a>
                 </li>
+                <li class="nav-item {{ (request()->is('dashboard/kuliner*')) ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('kuliner.index') }}">
+                        <span class="sidebar-icon">
+                            <i class="fa-solid fa-utensils"></i>
+                        </span>
+                        <span class="sidebar-text">Kuliner</span>
+                    </a>
+                </li>
+                <li class="nav-item {{ (request()->is('dashboard/berita*')) ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('berita.index') }}">
+                        <span class="sidebar-icon">
+                            <i class="fa-solid fa-newspaper"></i>
+                        </span>
+                        <span class="sidebar-text">Berita</span>
+                    </a>
+                </li>
+                <li class="nav-item {{ (request()->is('dashboard/galeri*')) ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('galeri.index') }}">
+                        <span class="sidebar-icon">
+                            <i class="fa-solid fa-image"></i>
+                        </span>
+                        <span class="sidebar-text">Galeri</span>
+                    </a>
+                </li>
+
+
                 <li role="separator" class="dropdown-divider mt-4 mb-3 border-gray-700"></li>
                 <li class="nav-item {{ (request()->is('dashboard/user*')) ? 'active' : '' }}">
                     <a class="nav-link" href="{{route('user.index')}}">
