@@ -3,6 +3,7 @@
 use App\Models\JenisWisatas;
 use App\Models\Kecamatans;
 use App\Models\ObjekWisatas;
+use App\Models\Kuliner;
 use App\Models\Schedules;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -87,3 +88,21 @@ Route::get('/user', function (Request $request) {
             ->make(true);
     }
 })->name('api.user');
+
+Route::get('/kuliner', function(Request $request){
+    if ($request->ajax()) {
+        $data = Kuliner::select('kuliners.*')->get();
+        return DataTables::of($data)
+            ->addIndexColumn()
+            ->addColumn('action', function ($row) {
+                $data = [
+                    $row->id_kuliner,
+                    $row->nama
+                ];
+                return $data;
+            })
+            // ->rawColumn(['action'])
+            ->make(true);
+    }
+
+})->name('api.kuliner');

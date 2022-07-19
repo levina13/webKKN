@@ -1,8 +1,11 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Dashboard\BeritaController;
+use App\Http\Controllers\Dashboard\GaleriController;
 use App\Http\Controllers\Dashboard\KategoriPariwisataController;
 use App\Http\Controllers\Dashboard\KecamatanController;
+use App\Http\Controllers\Dashboard\KulinerController;
 use App\Http\Controllers\Dashboard\ObjekPariwisataController;
 use App\Http\Controllers\Dashboard\PageController;
 use App\Http\Controllers\Dashboard\UserController;
@@ -105,7 +108,9 @@ Route::middleware(['auth', 'admin'])->group(function () {
         Route::resource('pariwisata', ObjekPariwisataController::class);
         Route::resource('kecamatan', KecamatanController::class);
         Route::resource('user', UserController::class);
-        
+        Route::resource('kuliner', KulinerController::class);
+        Route::resource('berita', BeritaController::class);
+        Route::resource('galeri', GaleriController::class);
     });
 });
 Route::middleware(['auth'])->group(function () {
