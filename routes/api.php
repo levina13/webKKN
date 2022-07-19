@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Berita;
 use App\Models\JenisWisatas;
 use App\Models\Kecamatans;
 use App\Models\ObjekWisatas;
@@ -106,3 +107,20 @@ Route::get('/kuliner', function(Request $request){
     }
 
 })->name('api.kuliner');
+
+Route::get('/berita', function (Request $request) {
+    if ($request->ajax()) {
+        $data = Berita::select('beritas.*')->get();
+        return DataTables::of($data)
+            ->addIndexColumn()
+            ->addColumn('action', function ($row) {
+                $data = [
+                    $row->id_berita,
+                    $row->nama
+                ];
+                return $data;
+            })
+            // ->rawColumn(['action'])
+            ->make(true);
+    }
+})->name('api.berita');

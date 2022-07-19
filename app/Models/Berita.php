@@ -10,6 +10,7 @@ class Berita extends Model
     use HasFactory;
     protected $fillable=[
         'judul',
+        'foto',
         'isi'
     ];
     protected $primaryKey='id_berita';

@@ -5,7 +5,8 @@ namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
 use App\Models\Berita;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Validator;
+use Exception;
 class BeritaController extends Controller
 {
     /**
@@ -25,7 +26,7 @@ class BeritaController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.berita.create');
     }
 
     /**
@@ -36,7 +37,34 @@ class BeritaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'judul' => 'required|string|unique:beritas,judul',
+            'foto' => 'required|image',
+            'isi' => 'required|string'
+        ]);
+        if ($validator->passes()) {
+            $validated = $validator->validated();
+            $foto = $request->foto;
+            $filename = $validated['foto']->hashName();
+            $imagePath = $validated['foto']->move('images/berita/', $filename);
+            try {
+                Berita::create([
+                    'judul' => $validated['judul'],
+                    'foto' => $imagePath,
+                    'isi' => $validated['isi']
+                ]);
+                $swal = [
+                    'type' => 'success',
+                    'title' => 'Data berhasil ditambahkan'
+                ];
+                return redirect()->route('berita.index')->with('alert', $swal);
+            } catch (Exception $e) {
+                return response()->json(['error' => 'Data gagal ditambahkan.']);
+            }
+        }
+        return redirect()->route('berita.create')
+        ->withErrors($validator)
+            ->withInput();
     }
 
     /**
@@ -56,9 +84,12 @@ class BeritaController extends Controller
      * @param  \App\Models\Berita  $berita
      * @return \Illuminate\Http\Response
      */
-    public function edit(Berita $berita)
+    public function edit($id)
     {
-        //
+        $berita = Berita::where('id_berita', $id)->first();
+        return view('dashboard.berita.edit', [
+            'berita' => $berita
+        ]);
     }
 
     /**
@@ -68,9 +99,42 @@ class BeritaController extends Controller
      * @param  \App\Models\Berita  $berita
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Berita $berita)
+    public function update(Request $request, $id)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'judul' => 'required|string',
+            'isi' => 'required|string'
+        ]);
+        $validator2 = Validator::make($request->all(), [
+            'foto' => 'image|required',
+        ]);
+        if ($validator->passes()) {
+            $validated = $validator->validated();
+            try {
+                $berita = Berita::where('id_berita', $id)->first();
+
+                $berita->judul = $validated['judul'];
+                if ($validator2->passes()) {
+                    $validated2 = $validator2->validated();
+                    $filename = $validated2['foto']->hashName();
+                    $imagePath = $validated2['foto']->move('images/berita/', $filename);
+                    $berita->foto = $imagePath;
+                }
+                $berita->isi = $validated['isi'];
+                $berita->save();
+
+                $swal = [
+                    'type' => 'success',
+                    'title' => 'Data berhasil ditambahkan'
+                ];
+                return redirect()->route('berita.index')->with('alert', $swal);
+            } catch (Exception $e) {
+                return response()->json(['error' => $e]);
+            }
+        }
+        return redirect()->route('berita.edit', $id)
+            ->withErrors($validator)
+            ->withInput();
     }
 
     /**
@@ -79,8 +143,17 @@ class BeritaController extends Controller
      * @param  \App\Models\Berita  $berita
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Berita $berita)
+    public function destroy($id)
     {
-        //
+        $berita = Berita::where('id_berita', $id)->first();
+        if ($berita != null) {
+            try {
+                $berita->delete();
+                return true;
+            } catch (Exception $e) {
+                return false;
+            }
+        }
+        return false;
     }
 }
