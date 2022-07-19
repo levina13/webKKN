@@ -7,7 +7,7 @@
 			<div class="row-fluid  d-flex justify-content-center mt-4">
 				<div class="col-lg-6 col-sm-10 col-md-8">
 					<iframe width="80%" height="300vh" src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1">
-					</iframe>		
+					</iframe>
 				</div>
 			</div>
 		</div>
@@ -20,7 +20,20 @@
 					<div class="col text-center section-popular-heading">
 					<h2>Wisata Terpopuler</h2>
 					<p>Sesuatu yang belum Anda lihat sebelumnya di dunia</p>
+                    <div class="row pt-4 gx-4 gy-4">
+                        <div class="col-md-4">
+                            <div class="card" style="width: 18rem;">
+                                <img class="card-img-top" src="..." alt="Card image cap">
+                                <div class="card-body">
+                                  <h5 class="card-title">Card title</h5>
+                                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
 					</div>
+
+
 				</div>
 			</div>
 		</section>
@@ -46,14 +59,14 @@
 		</section>
 
 		<section class="section-pupular-content " style="margin-top: 50px; padding-top:10px; padding-bottom:20px; background-color:#ffffff !important" id="popularContent">
-			
+
 			<div class="container" >
 					<div class="card border-0 shadow">
 						<div class="card-body">
 							<div class="row">
 								<div class="col text-start"><h4 style="font-family: 'Playfair Display', serif; font-weight: bold;" >Mungkin Anda tertarik</h4></div>
 								<div class="col text-end"><h5 style="text-align: right"><a href="{{route('public.list_wisata')}}">Lihat semua>></a></h5></div>
-								
+
 							</div>
 							<div class="row row-cols-md-3 row-cols-2 row-cols-sm-2 row-cols-lg-3 row-cols-xl-5 g-4 mt-3" style="min-height: 180px;">
 								@foreach ($wisataPilihans as $wisata)
@@ -73,8 +86,8 @@
 			</div>
 		</section>
 
-		
-		
+
+
 		<section class="section-testimonial-heading" id="testimonialHeading">
 			<div class="container">
 				<div class="row">
@@ -86,7 +99,7 @@
 						</p>
 					</div>
 				</div>
-				
+
 			</div>
 		</section>
 
@@ -113,8 +126,8 @@
 						</div>
 					@endforeach
 
-					
-					
+
+
 				</div>
 			</div>
 		</section>
@@ -131,7 +144,7 @@
 		</section>
 		<section class="section section-testimonial-content" id="testimonialContent" style="margin-top: -420px">
 					<div class="mt-4 mb-4 text-center">
-			
+
 						<div class="row-fluid d-flex justify-content-center">
 							<div class="col-lg-6 col-sm-10 col-md-8">
 								<iframe width="80%" height="300vh"  id="gmap_canvas" src="https://maps.google.com/maps?q=Sumber%20Banteng,%20Tempurejo,%20Kec.%20Pesantren,%20Kabupaten%20Kediri,%20Jawa%20Timur%2064138&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="2" scrolling="no" marginheight="0" marginwidth="0">
