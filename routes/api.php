@@ -5,6 +5,7 @@ use App\Models\JenisWisatas;
 use App\Models\Kecamatans;
 use App\Models\ObjekWisatas;
 use App\Models\Kuliner;
+use App\Models\Galeri;
 use App\Models\Schedules;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -124,3 +125,20 @@ Route::get('/berita', function (Request $request) {
             ->make(true);
     }
 })->name('api.berita');
+
+Route::get('/galeri', function (Request $request) {
+    if ($request->ajax()) {
+        $data = Galeri::select('galeris.*')->get();
+        return DataTables::of($data)
+            ->addIndexColumn()
+            ->addColumn('action', function ($row) {
+                $data = [
+                    $row->id_galeri,
+                    $row->judul
+                ];
+                return $data;
+            })
+            // ->rawColumn(['action'])
+            ->make(true);
+    }
+})->name('api.galeri');
