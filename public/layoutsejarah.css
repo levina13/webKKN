@@ -1,0 +1,56 @@
+	/* Intro */
+	.basic-1 {
+		padding-top: 1rem;
+        padding-bottom: 1rem;
+	}
+
+	.basic-1 .text-container {
+		margin-bottom: 0;
+	}
+	/* end of intro */
+
+    .container {
+        width: 100%;
+        padding-right: 2px;
+        padding-left: 2px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    /*@media (min-width: 576px)
+    .container {
+        max-width: 540px;
+    }*/
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+
+    .text-container {
+        margin-bottom: 2rem;
+    }
+
+    .section-title {
+        margin-bottom: 0.5rem;
+        color: #14bf98;
+        font: 500 0.8125rem/1.125rem "Montserrat", sans-serif;
+    }
+
+    .testimonial-text {
+        font-style: italic;
+    }
+
+    .testimonial-author {
+        color: #484a46;
+        font: 700 1rem/1.375rem "Montserrat", sans-serif;
+    }
+
+    p {
+        color: #787976;
+        margin-top: 0;
+        margin-bottom: 1rem;
+        font: 400 1rem/1.5625rem "Open Sans", sans-serif;
+    }
