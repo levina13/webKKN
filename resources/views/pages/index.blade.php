@@ -64,7 +64,7 @@
 					<div class="card border-0 shadow">
 						<div class="card-body">
 							<div class="row">
-								<div class="col text-start"><h4 style="font-family: 'Playfair Display', serif; font-weight: bold;" >Mungkin Anda tertarik</h4></div>
+								<div class="col text-start"><h4 style="font-family: 'Playfair Display', serif; font-weight: bold;" >Sejarah Singkat Wisata Sumber</h4></div>
 								<div class="col text-end"><h5 style="text-align: right"><a href="{{route('public.list_wisata')}}">Lihat semua>></a></h5></div>
 
 							</div>
@@ -92,14 +92,70 @@
 			<div class="container">
 				<div class="row">
 					<div class="col text-center">
-						<h2>Ulasan</h2>
+						<h2>Kuliner</h2>
 						<p>
-							Pengalaman terbaik mereka menggunakan Holiyou
-							<h5 style="text-align: right"><a href="{{route('ulasan.index')}}">Lihat semua>></a></h5></div>
+							Lihat Kuliner Apa Saja Yang Ada di Wisata Sumber Banteng
+							<div class="row pt-4 gx-4 gy-4">
+                                    <div class="col-md-3">
+                                        <div class="card" style="width: 15rem;">
+                                            <img class="card-img-top" src="https://www.itrip.id/wp-content/uploads/2019/12/Tempat-Makan-Kediri.jpg" alt="...." />
+                                            <div class="card-body">
+                                              <h5 class="card-title">Bakso - Bu Lastri</h5>
+                                              <p class="card-text">Bakso Jumbo, Bakso Bakar, Aneka Camilan</p>
+                                                <div class="number">
+                                                    <div class="medium infoitem"></div>
+                                                    "4.6"                     1,2 km
+                                            </div>
+                                          </div>
+                                    </div>
+                                    </div>
+
+									<div class="col-md-3">
+                                        <div class="card" style="width: 15rem;">
+                                            <img class="card-img-top" src="https://www.itrip.id/wp-content/uploads/2019/12/Tempat-Makan-Kediri.jpg" alt="...." />
+                                            <div class="card-body">
+                                              <h5 class="card-title">Nasi Goreng -  Skyline</h5>
+                                              <p class="card-text">Aneka Nasi Goreng, Aneka Minuman</p>
+                                              <div class="number">
+                                                <div class="medium infoitem"></div>
+                                                "4.6"                     1,2 km
+                                        </div>
+                                            </div>
+                                          </div>
+                                    </div>
+
+									<div class="col-md-3">
+                                        <div class="card" style="width: 15rem;">
+                                            <img class="card-img-top" src="https://www.itrip.id/wp-content/uploads/2019/12/Tempat-Makan-Kediri.jpg" alt="...." />
+                                            <div class="card-body">
+                                              <h5 class="card-title">Ayam Bakar - Sabang</h5>
+                                              <p class="card-text">Aneka Ayam, Minuman, Camilan</p>
+                                              <div class="number">
+                                                <div class="medium infoitem"></div>
+                                                "4.6"                     1,2 km
+                                        </div>
+                                            </div>
+                                          </div>
+                                    </div>
+
+									<div class="col-md-3">
+                                        <div class="card" style="width: 15rem;">
+                                            <img class="card-img-top" src="https://www.itrip.id/wp-content/uploads/2019/12/Tempat-Makan-Kediri.jpg" alt="...." />
+                                            <div class="card-body">
+                                              <h5 class="card-title">Mie Ayam - H.Mamat</h5>
+                                              <p class="card-text">Mie Ayam Ceker, Bakso, Pangsit</p>
+                                              <div class="number">
+                                                <div class="medium infoitem"></div>
+                                                "4.6"                     1,2 km
+                                        </div>
+                                            </div>
+                                          </div>
+                                    </div>
+							
+
 						</p>
 					</div>
 				</div>
-
 			</div>
 		</section>
 
@@ -131,6 +187,47 @@
 				</div>
 			</div>
 		</section>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+
+		<section class="section-testimonial-heading" id="testimonialHeading">
+			<div class="container">
+				<div class="row">
+					<div class="col text-center">
+						<h2>Berita</h2>
+						<p>
+							Lihat Ada Apa Saja Yang Ada di Wisata Sumber Banteng
+
+						<div class="col-md-4">
+                                <div class="card" style="width: 18rem;">
+                                    <img class="card-img-top" src="https://cdn.antaranews.com/cache/730x487/2019/07/21/Wisata-Sumber-Banteng-Kediri-210719-pf-6.jpg" alt="...." />
+                                    <div class="card-body">
+                                      <h5 class="card-title">Wisata Sumber Banteng Dipadati Pengunjung</h5>
+                                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                      <a href="#" class="btn btn-primary">Full Story</a>
+                                    </div>
+                                  </div>
+                            </div>
+
+							<div class="col-md-4">
+                                <div class="card" style="width: 18rem;">
+                                    <img class="card-img-top" src="https://cdn.antaranews.com/cache/730x487/2019/07/21/Wisata-Sumber-Banteng-Kediri-210719-pf-6.jpg" alt="...." />
+                                    <div class="card-body">
+                                      <h5 class="card-title">Ini Dia Tempat Wisata Daerah Tempurejo Kediri</h5>
+                                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                      <a href="#" class="btn btn-primary">Full Story</a>
+                                    </div>
+                                  </div>
+                            </div>
+
 
 		<section class="section-testimonial-heading mb-0" id="testimonialHeading">
 			<div class="container">
