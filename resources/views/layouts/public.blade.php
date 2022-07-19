@@ -156,13 +156,6 @@
         <!-- Grid column -->
         <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
           <!-- Content -->
-          <h6 class="text-uppercase fw-bold mb-4">
-            <i class="fas fa-gem me-3"></i>HOLIYOU
-          </h6>
-          <p>
-            Website yang bergerak di bidang pariwisata. Yang memiliki fitur untuk memesan tiket secara online dan
-           bisa mendapat informasi destinasi wisata di Malang Raya.
-          </p>
         </div>
         <!-- Grid column -->
 
@@ -178,7 +171,7 @@
           <p><i class="fas fa-home me-3"></i> Malang, ML 1102, INDONESIA</p>
           <p>
             <i class="fas fa-envelope me-3"></i>
-            holiyou@gmail.com
+            sumberbanteng@gmail.com
           </p>
           <p><i class="fas fa-phone me-3"></i> + 0341 5943</p>
         </div>
@@ -192,7 +185,7 @@
   <!-- Copyright -->
   <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
     © 2022 Copyright:
-    <a class="text-reset fw-bold" href="https://mdbootstrap.com/">Holiyou</a>
+    <a class="text-reset fw-bold" href="https://mdbootstrap.com/">Wisata Sumber Banteng</a>
   </div>
   <!-- Copyright -->
 </footer>
