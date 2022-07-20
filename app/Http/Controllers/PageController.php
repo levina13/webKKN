@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Berita;
+use App\Models\Galeri;
+use App\Models\Kuliner;
 use App\Models\ObjekWisatas;
 use App\Models\Ulasans;
 use Illuminate\Http\Request;
@@ -27,7 +30,16 @@ class PageController extends Controller
             ->join('users', 'ulasans.id_user', '=', 'users.id')
             ->join('objek_wisatas', 'ulasans.id_objek_wisata', '=', 'objek_wisatas.id_objek_wisata')
             ->orderBy('ulasans.created_at', 'DESC')->take(3)->get();
-        return view('pages.index', ['wisataPopulers' => $wisataPopulers, 'wisataPilihans'=>$wisataPilihans, 'ulasans'=>$ulasans]);
+        
+        $galeris = Galeri::select('galeris.*')
+            ->orderBy('galeris.created_at', 'DESC')->take(8)->get();
+
+        $kuliners = Kuliner::select('kuliners.*')
+            ->orderBy('kuliners.created_at', 'DESC')->take(4)->get();
+        $beritas = Berita::select('beritas.*')
+            ->orderBy('beritas.created_at', 'DESC')->take(2)->get();
+
+        return view('pages.index', ['wisataPopulers' => $wisataPopulers, 'wisataPilihans'=>$wisataPilihans, 'ulasans'=>$ulasans, 'kuliners'=>$kuliners, 'beritas'=>$beritas, 'galeris'=>$galeris]);
     }
 
     public function listWisata()
@@ -61,16 +73,27 @@ class PageController extends Controller
         ]);
     }
     public function kuliner(){
-        return view('pages.wisatas.kuliner');
+        $kuliners = Kuliner::select('kuliners.*')
+            ->orderBy('kuliners.created_at', 'DESC')->paginate(15);
+        return view('pages.wisatas.kuliner', ['kuliners'=>$kuliners]);
     }
     public function sejarah(){
         return view('pages.wisatas.sejarah');
     }
     public function listBerita(){
-        return view('pages.wisatas.berita.berita_index');
+        $beritas = Berita::select('beritas.*')
+            ->orderBy('beritas.created_at', 'DESC')->paginate(8);
+        return view('pages.wisatas.berita.berita_index', ['beritas' => $beritas]);
+    }
+    public function isiBerita($id){
+        $berita = Berita::select('beritas.*')
+            ->where('beritas.id_berita', $id)->first();
+        return view('pages.wisatas.berita.berita_isi', ['berita' => $berita]);
     }
     public function galeri()
     {
-        return view('pages.wisatas.galeri');
+        $galeris = Galeri::select('galeris.*')
+        ->orderBy('galeris.created_at', 'DESC')->paginate(20);
+        return view('pages.wisatas.galeri', ['galeris' => $galeris]);
     }
 }

@@ -37,6 +37,7 @@
                                 <tr>
                                     <th>No</th>
                                     <th>Username</th>
+                                    <th>Status</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -67,7 +68,18 @@
                   {
                     data: 'nama',
                     name: 'nama'
-                  }
+                  },
+                  {
+                    data:'admin',
+                    name:'admin',
+                    "render":function(data, type, full, meta){
+                        if (data==1) {
+                            return '<button type="button" class="btn btn-success btn-lg" disabled>Admin</button>';
+                        }else{
+                            return '<button type="button" class="btn btn-danger btn-lg" disabled>Non Admin</button>';
+                        }
+                    },
+                  },
               ]
           });
           

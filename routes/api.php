@@ -83,7 +83,7 @@ Route::get('/wisata', function (Request $request) {
 
 Route::get('/user', function (Request $request) {
     if ($request->ajax()) {
-        $data = User::select('users.name as nama')
+        $data = User::select('users.name as nama', 'users.is_admin as admin')
         ->orderBy('users.name', 'ASC')->get();
         return DataTables::of($data)
             ->addIndexColumn()

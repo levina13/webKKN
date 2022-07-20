@@ -15,19 +15,6 @@
         </nav>
     </div>
     <div class="row">
-        <div class="col-12 mb-4">
-            <div class="card bg-yellow-100 border-0 shadow">
-                <div class="card-header d-sm-flex flex-row align-items-center flex-0">
-                    <div class="d-block mb-3 mb-sm-0">
-                        <div class="fs-5 fw-normal mb-2"><i class="fas fa-map-marker"></i> Peta Persebaran</div>
-                        <h2 class="fs-3 fw-extrabold">{{ count($wisatas) }} Objek Wisata</h2>
-                    </div>
-                </div>
-                <div class="card-body p-2">
-                    <div id="map" style="width: 100%; min-height: 450px;"></div>
-                </div>
-            </div>
-        </div>
         <div class="col-12 col-sm-6 col-xl-4 mb-4">
             <div class="card border-0 shadow">
                 <div class="card-body">
@@ -53,13 +40,13 @@
                     <div class="row d-block d-xl-flex align-items-center">
                         <div class="col-lg-2 col-sm-12 col-md-12 text-xl-center mb-3 mb-xl-0 d-flex align-items-center">
                             <div class="icon-shape icon-shape-secondary rounded me-4 me-sm-0">
-                                <i class="fas fa-map-marker"></i>
+                                <i class="fa-solid fa-utensils"></i>
                             </div>
                         </div>
                         <div class="col-lg-10 col-sm-12 col-md-12">
                             <div class="">
-                                <h2 class="fw-extrabold h5">Objek Wisata</h2>
-                                <h3 class="mb-1">{{ count($wisatas) }}</h3>
+                                <h2 class="fw-extrabold h5">Kuliner</h2>
+                                <h3 class="mb-1">{{$jumlah_kuliner}}</h3>
                             </div>
                         </div>
                     </div>
@@ -72,13 +59,32 @@
                     <div class="row d-block d-xl-flex align-items-center">
                         <div class="col-lg-2 col-sm-12 col-md-12 text-xl-center mb-3 mb-xl-0 d-flex align-items-center">
                             <div class="icon-shape icon-shape-secondary rounded me-4 me-sm-0">
-                                <i class="fas fa-star"></i>
+                                <i class="fa-solid fa-newspaper"></i>
                             </div>
                         </div>
                         <div class="col-lg-10 col-sm-12 col-md-12">
                             <div class="">
-                                <h2 class="fw-extrabold h5">Ulasan</h2>
-                                <h3 class="mb-1">{{ $jumlah_ulasan }}</h3>
+                                <h2 class="fw-extrabold h5">Berita</h2>
+                                <h3 class="mb-1">{{ $jumlah_berita }}</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-xl-4 mb-4">
+            <div class="card border-0 shadow">
+                <div class="card-body">
+                    <div class="row d-block d-xl-flex align-items-center">
+                        <div class="col-lg-2 col-sm-12 col-md-12 text-xl-center mb-3 mb-xl-0 d-flex align-items-center">
+                            <div class="icon-shape icon-shape-secondary rounded me-4 me-sm-0">
+                                <i class="fa-solid fa-image"></i>
+                            </div>
+                        </div>
+                        <div class="col-lg-10 col-sm-12 col-md-12">
+                            <div class="">
+                                <h2 class="fw-extrabold h5">Galeri</h2>
+                                <h3 class="mb-1">{{ $jumlah_galeri }}</h3>
                             </div>
                         </div>
                     </div>
