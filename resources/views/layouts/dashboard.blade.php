@@ -153,30 +153,7 @@
                         </ul>
                     </div>
                 </li> --}}
-                <li class="nav-item {{ (request()->is('dashboard/kategori*')) ? 'active' : '' }}">
-                    <a class="nav-link" href="{{ route('kategori.index') }}">
-                        <span class="sidebar-icon">
-                            <i class="fas fa-water"></i>
-                        </span>
-                        <span class="sidebar-text">Kategori</span>
-                    </a>
-                </li>
-                <li class="nav-item {{ (request()->is('dashboard/kecamatan*')) ? 'active' : '' }}">
-                    <a href="{{ route('kecamatan.index') }}" class="nav-link">
-                        <span class="sidebar-icon">
-                            <i class="fas fa-landmark"></i>
-                        </span>
-                        <span class="sidebar-text">Kecamatan</span>
-                    </a>
-                </li>
-                <li class="nav-item {{ (request()->is('dashboard/pariwisata*')) ? 'active' : '' }}">
-                    <a class="nav-link" href="{{ route('pariwisata.index') }}">
-                        <span class="sidebar-icon">
-                            <i class="fas fa-igloo"></i>
-                        </span>
-                        <span class="sidebar-text">Objek Wisata</span>
-                    </a>
-                </li>
+                
                 <li class="nav-item {{ (request()->is('dashboard/kuliner*')) ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('kuliner.index') }}">
                         <span class="sidebar-icon">
