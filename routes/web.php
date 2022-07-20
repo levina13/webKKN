@@ -39,6 +39,7 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/kuliner', [PublicPageController::class, 'kuliner'])->name('public.kuliner');
 Route::get('/sejarah', [PublicPageController::class, 'sejarah'])->name('public.sejarah');
 Route::get('/berita', [PublicPageController::class, 'listBerita'])->name('public.listBerita');
+Route::get('/berita/{id}', [PublicPageController::class, 'isiBerita'])->name('public.isiBerita');
 Route::get('/galeri', [PublicPageController::class, 'galeri'])->name('public.galeri');
 
 Route::middleware(['guest'])->group(function () {

@@ -14,7 +14,7 @@
         <div class="container">
             <section class="section-popular-content" id="popularContent">
                 <div class="container">
-                    <div class="card border-0 shadow">
+                    <div class="card border-0 shadow" style="margin-bottom: 40px">
                         <div class="card-body">
                             {{--<div class="section-popular-travel row justify-content-center">--}}
     <!-- Intro -->

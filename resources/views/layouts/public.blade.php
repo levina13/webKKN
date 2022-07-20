@@ -33,12 +33,11 @@
 					<li class="nav-item text-center {{(request()->routeIs('index'))?'active':''}} font-weight-bold">
 						<a href="{{ route('index') }}" class="nav-link ">Home</a>
 					</li>
-
-					<li class="nav-item text-center {{(request()->routeIs('kuliner'))?'active':''}} font-weight-bold">
-						<a href="{{ route('public.kuliner') }}" class="nav-link ">Kuliner</a>
-					</li>
 					<li class="nav-item text-center {{(request()->routeIs('sejarah'))?'active':''}} font-weight-bold">
 						<a href="{{ route('public.sejarah') }}" class="nav-link ">Sejarah</a>
+					</li>
+					<li class="nav-item text-center {{(request()->routeIs('kuliner'))?'active':''}} font-weight-bold">
+						<a href="{{ route('public.kuliner') }}" class="nav-link ">Kuliner</a>
 					</li>
 					<li class="nav-item text-center {{(request()->routeIs('listBerita'))?'active':''}} font-weight-bold">
 						<a href="{{ route('public.listBerita') }}" class="nav-link ">Berita</a>
