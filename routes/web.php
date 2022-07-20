@@ -36,10 +36,10 @@ Route::get('/wisata/{id}', [PublicPageController::class, 'wisata'])->name('publi
 Route::get('/wisata/{id}/lokasi', [PublicPageController::class, 'lokasi'])->name('public.wisata.lokasi');
 Route::get('/ulasan', [UlasanController::class, 'index'])->name('ulasan.index');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
-Route::get('/kuliner', [PublicPageController::class, 'kuliner'])->name('kuliner');
-Route::get('/sejarah', [PublicPageController::class, 'sejarah'])->name('sejarah');
-Route::get('/berita', [PublicPageController::class, 'listBerita'])->name('listBerita');
-Route::get('/galeri', [PublicPageController::class, 'galeri'])->name('galeri');
+Route::get('/kuliner', [PublicPageController::class, 'kuliner'])->name('public.kuliner');
+Route::get('/sejarah', [PublicPageController::class, 'sejarah'])->name('public.sejarah');
+Route::get('/berita', [PublicPageController::class, 'listBerita'])->name('public.listBerita');
+Route::get('/galeri', [PublicPageController::class, 'galeri'])->name('public.galeri');
 
 Route::middleware(['guest'])->group(function () {
     Route::prefix('auth')->group(function () {

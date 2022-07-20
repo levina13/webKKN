@@ -35,16 +35,16 @@
 					</li>
 
 					<li class="nav-item text-center {{(request()->routeIs('kuliner'))?'active':''}} font-weight-bold">
-						<a href="{{ route('kuliner') }}" class="nav-link ">Kuliner</a>
+						<a href="{{ route('public.kuliner') }}" class="nav-link ">Kuliner</a>
 					</li>
 					<li class="nav-item text-center {{(request()->routeIs('sejarah'))?'active':''}} font-weight-bold">
-						<a href="{{ route('sejarah') }}" class="nav-link ">Sejarah</a>
+						<a href="{{ route('public.sejarah') }}" class="nav-link ">Sejarah</a>
 					</li>
 					<li class="nav-item text-center {{(request()->routeIs('listBerita'))?'active':''}} font-weight-bold">
-						<a href="{{ route('listBerita') }}" class="nav-link ">Berita</a>
+						<a href="{{ route('public.listBerita') }}" class="nav-link ">Berita</a>
 					</li>
 					<li class="nav-item text-center {{(request()->routeIs('galeri'))?'active':''}} font-weight-bold">
-						<a href="{{ route('galeri') }}" class="nav-link ">Galeri</a>
+						<a href="{{ route('public.galeri') }}" class="nav-link ">Galeri</a>
 					</li>
 				</ul>
 				<!-- Mobile Button -->
@@ -154,9 +154,6 @@
       <!-- Grid row -->
       <div class="row mt-3">
         <!-- Grid column -->
-        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-          <!-- Content -->
-        </div>
         <!-- Grid column -->
 
         <!-- Grid column -->
