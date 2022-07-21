@@ -59,6 +59,13 @@
     <script>
         $(document).ready(function(){
             var table = $('.yajra-datatable').DataTable({
+                scrollY:        true,
+                scrollX:        true,
+                scrollCollapse: true,
+                fixedColumns:   {
+                    left: 2,
+                    right:1
+                },              
               processing: true,
               serverSide: true,
               ajax: "{{ route('api.kuliner') }}",

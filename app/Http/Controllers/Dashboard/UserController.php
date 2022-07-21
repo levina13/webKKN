@@ -73,7 +73,27 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'status' => 'required'
+        ]);
+
+        if ($validator->passes()) {
+            $user = User::where('id', $id)->first();
+            $status = $request->status;
+            if ($status==1) {
+                $user->is_admin=0;
+            } else {
+                $user->is_admin = 1;
+            }
+            
+            if ($user->save()) {
+                return true;
+            }
+
+            return response()->json(['error' => $validator->errors()->all()]);
+        }
+
+        return response()->json(['error' => $validator->errors()->all()]);
     }
 
     /**

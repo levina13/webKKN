@@ -30,9 +30,11 @@
                 <div class="row mb-4  justify-content-center">
                     <div class="col-11">
                         <div class="card" style="">
-                            <img class="card-img-top" src="{{ urlencode('../'.$berita->foto) }}" alt="...." />
+                            <div class="card-img-top justify-content-center">
+                                <img class="" src="{{ urlencode('../'.$berita->foto) }}" alt="...." />
+                            </div>
                             <div class="card-body">
-                            <p class="card-text">{!!substr($berita->isi)!!}</p>
+                            <p class="card-text">{!!$berita->isi!!}</p>
                             </div>
                         </div>
                     </div>

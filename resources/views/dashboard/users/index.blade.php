@@ -36,8 +36,9 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>Username</th>
+                                    <th>Nama</th>
                                     <th>Status</th>
+                                    <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -66,17 +67,28 @@
                     "width": "10%",
                   },
                   {
-                    data: 'nama',
-                    name: 'nama'
+                    data: 'name',
+                    name: 'name'
                   },
                   {
-                    data:'admin',
-                    name:'admin',
+                    data:'is_admin',
+                    name:'is_admin',
                     "render":function(data, type, full, meta){
                         if (data==1) {
-                            return '<button type="button" class="btn btn-success btn-lg" disabled>Admin</button>';
+                            return '<button type="button" class="btn btn-info btn-sm" disabled>Admin</button>';
                         }else{
-                            return '<button type="button" class="btn btn-danger btn-lg" disabled>Non Admin</button>';
+                            return '<button type="button" class="btn btn-warning btn-sm" disabled>Non Admin</button>';
+                        }
+                    },
+                  },
+                  {
+                    data:'action',
+                    name:'action',
+                    "render":function(data, type, full, meta){
+                        if (data[2]==1) {
+                            return '<button type="button" class="btn btn-danger btn-sm btn-ubah-nonadmin" data-id="'+data[0]+'" data-nama="'+data[1]+'"data-admin="'+data[2]+'">Ubah Non Admin</button>';
+                        }else{
+                            return '<button type="button" class="btn btn-success btn-sm btn-ubah-admin" data-id="'+data[0]+'" data-nama="'+data[1]+'"data-admin="'+data[2]+'">Ubah Admin</button>';
                         }
                     },
                   },
@@ -85,5 +97,130 @@
           
         });
     </script>
+    <script>
+        $(document).on('click', '.btn-ubah-nonadmin', function (e) { 
+            e.preventDefault();
+            var nama = $(this).data('nama');
+            var id = $(this).data('id');
+            var status = $(this).data('admin');
+            var title = 'Apakah anda yakin '+nama+' akan menjadi NON-Admin?';
+            var text = nama+' akan berhenti menjadi admin.'
 
+            Swal.fire({
+                icon: 'warning',
+                title: title,
+                text: text,
+                showCancelButton: true,
+                confirmButtonText: 'Ubah Status',
+                cancelButtonText: 'Batal'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });
+                    $.ajax({
+                        url: '/admin-page/user/'+id,
+                        type: 'PATCH',
+                        dataType: 'json',
+                        data: {method: '_PATCH', id_user: id, status:status},
+
+                        success: function(data) {
+                            if (data == true) {
+                                Swal.fire({
+                                    title: 'Status Berubah!',
+                                    text: 'Status berhasil diubah.',
+                                    icon: 'success',
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                });
+                            } else {
+                                Swal.fire({
+                                    title: 'Gagal!',
+                                    text: 'Status gagal diubah.',
+                                    icon: 'error',
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                });
+                            }
+                        },
+                        error: function(){
+                            Swal.fire({
+                                title: 'Gagal!',
+                                text: 'Status gagal diubah.',
+                                icon: 'error',
+                                showConfirmButton: false,
+                                timer: 1500
+                            });
+                        }
+                    }).always(function (data) {
+                        $('.yajra-datatable').DataTable().draw(false);
+                    });
+                }
+            })
+        });
+        $(document).on('click', '.btn-ubah-admin', function (e) { 
+            e.preventDefault();
+            var nama = $(this).data('nama');
+            var id = $(this).data('id');
+            var status = $(this).data('admin');
+            var title = 'Apakah anda yakin '+nama+' akan menjadi Admin?';
+            var text = nama+' akan menjadi admin.';
+
+            Swal.fire({
+                icon: 'warning',
+                title: title,
+                text: text,
+                showCancelButton: true,
+                confirmButtonText: 'Ubah Status',
+                cancelButtonText: 'Batal'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });
+                    $.ajax({
+                        url: '/admin-page/user/'+id,
+                        type: 'PATCH',
+                        dataType: 'json',
+                        data: {method: '_PATCH', id_user: id, status:status},
+
+                        success: function(data) {
+                            if (data == true) {
+                                Swal.fire({
+                                    title: 'Status Berubah!',
+                                    text: 'Status berhasil diubah.',
+                                    icon: 'success',
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                });
+                            } else {
+                                Swal.fire({
+                                    title: 'Gagal!',
+                                    text: 'Status gagal diubah.',
+                                    icon: 'error',
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                });
+                            }
+                        },
+                        error: function(){
+                            Swal.fire({
+                                title: 'Gagal!',
+                                text: 'Status gagal diubah.',
+                                icon: 'error',
+                                showConfirmButton: false,
+                                timer: 1500
+                            });
+                        }
+                    }).always(function (data) {
+                        $('.yajra-datatable').DataTable().draw(false);
+                    });
+                }
+            })
+        });
+    </script>
 @endsection

@@ -38,7 +38,7 @@
         <div class="card border-0 shadow">
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table table-centered table-nowrap w-100 mb-0 rounded yajra-datatable">
+                    <table class="table table-centered table-nowrap w-100 mb-0 rounded yajra-datatable" >
                         <thead class="thead-light">
                             <tr>
                                 <th class="border-0 rounded-start text-center">No</th>
@@ -59,7 +59,14 @@
     <script>
         $(document).ready(function(){
             var table = $('.yajra-datatable').DataTable({
-              processing: true,
+                processing: true,
+                scrollY:        true,
+                scrollX:        true,
+                scrollCollapse: true,
+                fixedColumns:   {
+                    left: 2,
+                    right:1
+                },              
               serverSide: true,
               ajax: "{{ route('api.berita') }}",
               columns: [
@@ -101,8 +108,13 @@
                   {
                     "className": "dt-center",
                     "targets": [0,4]
-                  }
-              ]
+                  },
+                  {
+                    "width":10,
+                    "targets":[3]
+                  },
+              ],
+
           });
         });
     </script>

@@ -50,12 +50,19 @@
 
     <!-- Data Tables -->
     <link href="//cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
+    <link href="//cdn.datatables.net/fixedcolumns/4.1.0/css/fixedColumns.bootstrap.css" rel="stylesheet" type="text/css">
 
     <!-- Custom CSS -->
     <link type="text/css" href="/css/app.css" rel="stylesheet">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
 </head>
+<style>
+    div.dataTables_wrapper {
+    width: 95%;
+    margin: 0 auto;
+    }
+</style>
 
 <body>
 
@@ -369,7 +376,8 @@
 
     <!-- Data Tables -->
     <script src="//cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js" type="text/javascript"></script>
-    
+    {{-- Fixed Columns --}}
+    <script type="text/javascript" src="//cdn.datatables.net/fixedcolumns/4.1.0/js/fixedColumns.dataTables.min.js"></script>
     <!-- CKEditor -->
     <script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
     <script>
