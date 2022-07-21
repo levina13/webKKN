@@ -31,10 +31,6 @@ use Illuminate\Support\Str;
 */
 
 Route::get('/', [PublicPageController::class, 'index'])->name('index');
-Route::get('/wisata', [PublicPageController::class, 'listWisata'])->name('public.list_wisata');
-Route::get('/wisata/{id}', [PublicPageController::class, 'wisata'])->name('public.wisata');
-Route::get('/wisata/{id}/lokasi', [PublicPageController::class, 'lokasi'])->name('public.wisata.lokasi');
-Route::get('/ulasan', [UlasanController::class, 'index'])->name('ulasan.index');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/kuliner', [PublicPageController::class, 'kuliner'])->name('public.kuliner');
 Route::get('/sejarah', [PublicPageController::class, 'sejarah'])->name('public.sejarah');
@@ -105,18 +101,11 @@ Route::middleware(['guest'])->group(function () {
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::prefix('admin-page')->group(function () {
         Route::get('/', [PageController::class, 'main'])->name('admin-page');
-        Route::resource('kategori', KategoriPariwisataController::class);
-        Route::resource('pariwisata', ObjekPariwisataController::class);
-        Route::resource('kecamatan', KecamatanController::class);
         Route::resource('user', UserController::class);
         Route::resource('kuliner', KulinerController::class);
         Route::resource('berita', BeritaController::class);
         Route::resource('galeri', GaleriController::class);
     });
-});
-Route::middleware(['auth'])->group(function () {
-    Route::resource('jadwal', ScheduleController::class);
-    Route::post('/ulasan', [UlasanController::class, 'store'])->name('ulasan.store');
 });
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth', 'admin']], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();

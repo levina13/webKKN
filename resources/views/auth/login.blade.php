@@ -8,7 +8,7 @@
                     <div class="row">
                         <div class="col-2">
                             <a href="{{route('index')}}">
-                                <img src="{{ asset('assets/img/brand/.png') }}" width="50" height="50" alt="Logo" /> 
+                                <img src="{{ asset('assets/img/brand/holiyou.png') }}" width="50" height="50" alt="Logo" /> 
                             </a>
                         </div>
                         <div class="pl-5 col-10" style="padding-left:25px">

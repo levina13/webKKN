@@ -93,16 +93,3 @@
         </div>
     </div>
 @endsection
-@section('layout_script')
-    <script>
-        var map = L.map('map').setView([-7.9754989, 112.645687], 12);
-
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
-    @foreach ($wisatas as $wisata)
-        L.marker([{{ $wisata->latitude_Y }}, {{ $wisata->longitude_X }}]).addTo(map)
-            .bindPopup("{{ $wisata->nama }}");
-    @endforeach
-    </script>
-@endsection

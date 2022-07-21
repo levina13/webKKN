@@ -64,17 +64,7 @@
 								<a href="{{ route('logout') }}" role="button" type="submit" class="dropdown-item"><i class="fas fa-sign-out-alt mr-2"></i> Logout</a>
 							</div>
 						</li>
-					@else
-						<li class="nav-item dropdown btn btn-login w-100 my-2 my-sm-0 d-flex">
-							<button href="#" class="nav-link dropdown-toggle btn btn-login btn-block text-center align-content-center justify-content-center" id="navbardrop" data-toggle="dropdown">
-								Login/Register
-							</button>
-							<div class="dropdown-menu w-100">
-							<a href="{{ route('login') }}" class="dropdown-item"><i class="fas fa-user-circle mr-2"></i> Login </a>
-							<a href="{{ route('register') }}" class="dropdown-item"><i class="fas fa-address-card mr-2"></i> Register</a>
-							</div>
-						</li>
-					@endif
+=					@endif
 
 				</form>
 
@@ -91,13 +81,6 @@
 							@endif
 							<a href="{{ route('logout') }}" role="button" type="submit" class="dropdown-item"><i class="fas fa-sign-out-alt mr-2"></i> Logout</a>
 						</div>
-					</li>
-					@else
-
-					<li class="nav-item btn btn-login btn-navbar-right d-flex align-content-center">
-						<a href="{{ route('login') }}" class="nav-link btn btn-login" id="navbardrop">
-							Login/Register
-						</a>
 					</li>
 					@endif
 				</form>

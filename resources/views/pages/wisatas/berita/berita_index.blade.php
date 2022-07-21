@@ -27,10 +27,13 @@
                             @foreach ($beritas as $berita)
                               <div class="col-lg-6 col-sm-10 col-md-8 mb-2">
                                   <div class="card" style="">
+                                    @php
+                                        $pos = strpos($berita->isi, '</p>')
+                                    @endphp
                                       <img class="card-img-top" src="{{ urlencode($berita->foto) }}" alt="...." />
                                       <div class="card-body">
                                         <h5 class="card-title">{{$berita->judul}}</h5>
-                                        <p class="card-text">{!!substr($berita->isi, 0, 200)!!}.....</p>
+                                        <p class="card-text">{!!substr($berita->isi, 0, $pos+4)!!}.....</p>
                                         <a href="{{ route('public.isiBerita', $berita->id_berita) }}" class="btn btn-primary">Full Story</a>
                                       </div>
                                     </div>

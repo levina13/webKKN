@@ -48,24 +48,12 @@
 								</div> <!-- end of col -->
 
 								
-								{{-- @foreach ($wisataPilihans as $wisata)
-									<div class="col-sm-4 col-md-3 col-lg-2 highlight-item onpagination-load gambarrr">
-										<a style="--bs-aspect-ratio: 125%" class="gambarzoom d-block rounded-3 overflow-hidden flex-column" href="{{ route('public.wisata', $wisata->id_objek_wisata) }}">
-											<img src="{{ urlencode($wisata->gambar) }}" class=" bg-img w-100 h-100 object-fit-cover position-absolute top-0 hover-zoom" alt="{{ $wisata->nama }}">
-											<div class="overlay-text position-absolute top-0 w-100 px-4 text-center d-flex h-100 justify-content-center align-items-end">
-												<h6 class="text-white  pb-2 mb-4">{{ $wisata->nama }}</h6>
-											</div>
-										</a>
-									</div>
-								@endforeach --}}
 							</div>
 
 						</div>
 
 					</div>
 			</div>
-					@foreach ($wisataPopulers as $wisata)
-                    @endforeach
 				</div>
 			</div>
 		</section>
@@ -132,10 +120,13 @@
 					@foreach($beritas as $berita)
 						<div class="col-lg-6 col-sm-10 col-md-8 mb-2">
 							<div class="card" style="">
+								@php
+									$pos = strpos($berita->isi, '</p>')
+								@endphp
 								<img class="card-img-top" src="{{ urlencode($berita->foto) }}" alt="...." />
 								<div class="card-body">
 								<h5 class="card-title">{{$berita->judul}}</h5>
-								<p class="card-text">{!!substr($berita->isi, 0, 200)!!}.....</p>
+								<p class="card-text">{!!substr($berita->isi, 0, $pos+4)!!}.....</p>
 								<a href="{{ route('public.isiBerita', $berita->id_berita) }}" class="btn btn-primary">Full Story</a>
 								</div>
 							</div>

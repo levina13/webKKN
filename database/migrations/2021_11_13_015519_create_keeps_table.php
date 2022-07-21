@@ -17,8 +17,6 @@ class CreateKeepsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('id_user');
             $table->foreign('id_user')->references('id')->on('users');
-            $table->unsignedBigInteger('id_objek_wisata');
-            $table->foreign('id_objek_wisata')->references('id_objek_wisata')->on('objek_wisatas');
             $table->timestamps();
         });
     }
