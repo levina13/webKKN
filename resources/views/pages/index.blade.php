@@ -30,30 +30,32 @@
 			<div class="container">
 				<div class="section-popular-travel row justify-content-center">
 			<div class="container" >
-					<div class="card border-0 shadow">
-						<div class="card-body">
-							<div class="row row-cols-md-3 row-cols-2 row-cols-sm-2 row-cols-lg-3 row-cols-xl-5 g-4 mt-3" style="min-height: 180px;">
-								<div class="col-lg-5">
-									<div class="image-container">
-										<img class="img-fluid" src="{{urlencode($sejarah->foto)}}" alt="alternative">
-									</div> <!-- end of image-container -->
-								</div> <!-- end of col -->
-								<div class="col-lg-5">
-									<div class="text-container">
-										@php
-											$pos = strpos($sejarah->isi, '</p>')
-										@endphp
+				@if(!empty($sejarah))
+				<div class="card border-0 shadow">
+					<div class="card-body">
+						<div class="row row-cols-md-3 row-cols-2 row-cols-sm-2 row-cols-lg-3 row-cols-xl-5 g-4 mt-3" style="min-height: 180px;">
+							<div class="col-lg-5">
+								<div class="image-container">
+									<img class="img-fluid" src="{{urlencode($sejarah->foto)}}" alt="alternative">
+								</div> <!-- end of image-container -->
+							</div> <!-- end of col -->
+							<div class="col-lg-5">
+								<div class="text-container">
+									@php
+										$pos = strpos($sejarah->isi, '</p>')
+									@endphp
 
-										{!!substr($sejarah->isi, 0, $pos)!!}.....<a href="{{route('public.sejarah')}}">Baca Selengkapnya>></a></p>
-									</div> <!-- end of text-container -->
-								</div> <!-- end of col -->
+									{!!substr($sejarah->isi, 0, $pos)!!}.....<a href="{{route('public.sejarah')}}">Baca Selengkapnya>></a></p>
+								</div> <!-- end of text-container -->
+							</div> <!-- end of col -->
 
-								
-							</div>
-
+							
 						</div>
 
 					</div>
+
+				</div>
+				@endif
 			</div>
 				</div>
 			</div>

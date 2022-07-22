@@ -17,26 +17,28 @@
                     <div class="card border-0 shadow" style="margin-bottom: 40px">
                         <div class="card-body">
                             {{--<div class="section-popular-travel row justify-content-center">--}}
-    <!-- Intro -->
-    <div id="intro" class="basic-1">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6 col-md-8s col-sm-10 ">
-                    <div class="image-container">
-                        <img class="img-fluid" src="{{ urlencode($sejarah->foto) }}" alt="alternative">
-                    </div> <!-- end of image-container -->
-                </div> <!-- end of col -->
-            </div>
-            <div class="row">
-                <div class="col-lg-5">
-                    <div class="text-container" style="color: black !important">
-                        {!!$sejarah->isi!!}
-                    </div> <!-- end of text-container -->
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </div> <!-- end of basic-1 -->
-    <!-- end of intro -->
+                            @if(!empty($sejarah))
+                                <!-- Intro -->
+                                <div id="intro" class="basic-1">
+                                    <div class="container">
+                                        <div class="row justify-content-center">
+                                            <div class="col-lg-6 col-md-8s col-sm-10 ">
+                                                <div class="image-container">
+                                                    <img class="img-fluid" src="{{ urlencode($sejarah->foto) }}" alt="alternative">
+                                                </div> <!-- end of image-container -->
+                                            </div> <!-- end of col -->
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-5">
+                                                <div class="text-container" style="color: black !important">
+                                                    {!!$sejarah->isi!!}
+                                                </div> <!-- end of text-container -->
+                                            </div> <!-- end of col -->
+                                        </div> <!-- end of row -->
+                                    </div> <!-- end of container -->
+                                </div> <!-- end of basic-1 -->
+                                <!-- end of intro -->
+                            @endif
                                 {{-- @foreach ($wisatas as $wisata)
                                 <div class="col-sm-6 col-md-4 col-lg-3">
                                     <div class="border-0 shadow rounded card-travel text-center d-flex flex-column" style="background-image: url('{{ urlencode($wisata->gambar) }}');" >
