@@ -20,16 +20,18 @@
     <!-- Intro -->
     <div id="intro" class="basic-1">
         <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-8s col-sm-10 ">
+                    <div class="image-container">
+                        <img class="img-fluid" src="{{ urlencode($sejarah->foto) }}" alt="alternative">
+                    </div> <!-- end of image-container -->
+                </div> <!-- end of col -->
+            </div>
             <div class="row">
                 <div class="col-lg-5">
                     <div class="text-container">
                         {!!$sejarah->isi!!}
                     </div> <!-- end of text-container -->
-                </div> <!-- end of col -->
-                <div class="col-lg-7">
-                    <div class="image-container">
-                        <img class="img-fluid" src="{{ urlencode($sejarah->foto) }}" alt="alternative">
-                    </div> <!-- end of image-container -->
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of container -->

@@ -7,6 +7,7 @@ use App\Models\ObjekWisatas;
 use App\Models\Kuliner;
 use App\Models\Galeri;
 use App\Models\Schedules;
+use App\Models\sejarah;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -150,3 +151,18 @@ Route::get('/galeri', function (Request $request) {
             ->make(true);
     }
 })->name('api.galeri');
+Route::get('/sejarah', function (Request $request) {
+    if ($request->ajax()) {
+        $data = sejarah::select('sejarahs.*')->get();
+        return DataTables::of($data)
+            ->addIndexColumn()
+            ->addColumn('action', function ($row) {
+                $data = [
+                    $row->id_sejarah,
+                ];
+                return $data;
+            })
+            // ->rawColumn(['action'])
+            ->make(true);
+    }
+})->name('api.sejarah');

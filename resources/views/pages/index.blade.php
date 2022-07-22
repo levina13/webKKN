@@ -33,9 +33,9 @@
 					<div class="card border-0 shadow">
 						<div class="card-body">
 							<div class="row row-cols-md-3 row-cols-2 row-cols-sm-2 row-cols-lg-3 row-cols-xl-5 g-4 mt-3" style="min-height: 180px;">
-								<div class="col-lg-7">
+								<div class="col-lg-5">
 									<div class="image-container">
-										<img class="img-fluid" src="images/wisata/sb.jpg" alt="alternative">
+										<img class="img-fluid" src="{{urlencode($sejarah->foto)}}" alt="alternative">
 									</div> <!-- end of image-container -->
 								</div> <!-- end of col -->
 								<div class="col-lg-5">
