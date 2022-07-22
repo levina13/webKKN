@@ -22,7 +22,7 @@
 	<div class="container sticky-top">
 		<nav class="row navbar navbar-expand-lg navbar-light bg-white">
 			<a href="{{ route('index') }}" class="navbar-brand">
-				<img src="{{ asset('images/wisata/kkn') }}" alt=" " />
+				<img src="{{ asset('/assets/img/brand/kkn.png') }}" alt=" " />
 			</a>
 			<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb">
 				<span class="navbar-toggler-icon"></span>
