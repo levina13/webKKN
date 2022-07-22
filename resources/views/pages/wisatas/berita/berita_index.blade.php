@@ -7,7 +7,7 @@
 
 		<p class="mt-3">
 			Kumpulan berita terbaru <br>
-            di Wisata Sumber Banteng
+            di Wisata Sumber Bantheng
 		</p>
 		{{-- <a href="{{ route('public.list_wisata') }}" class="btn btn-get-started px-4 mt-4"> --}}
 			{{-- Destinasi Wisata --}}
@@ -30,13 +30,19 @@
                                     @php
                                         $pos = strpos($berita->isi, '</p>')
                                     @endphp
-                                      <div class="row justify-content-center">
-                                        <img class="col-10" style="max-height: 250px; width:auto; max-width:100%" src="{{ urlencode($berita->foto) }}" alt="gambar berita" />
-                                      </div>
                                       <div class="card-body">
-                                        <h5 class="card-title">{{$berita->judul}}</h5>
-                                        <p class="card-text">{!!substr($berita->isi, 0, $pos+4)!!}.....</p>
-                                        <a href="{{ route('public.isiBerita', $berita->id_berita) }}" class="btn btn-primary">Full Story</a>
+                                        <div class="row justify-content-center">
+                                          <h5 class="card-title">{{$berita->judul}}</h5>
+                                        </div>
+                                        <div class="row justify-content-center">
+                                          <div class="col-4">
+                                            <img class="img-fluid" style="" src="{{ urlencode($berita->foto) }}" alt="gambar berita" />
+                                          </div>
+                                          <div class="col-8 card-body">
+                                            <p class="card-text">{!!substr($berita->isi, 0, $pos+4)!!}.....</p>
+                                            <a href="{{ route('public.isiBerita', $berita->id_berita) }}" class="btn btn-primary">Full Story</a>
+                                          </div>
+                                        </div>
                                       </div>
                                     </div>
                               </div>

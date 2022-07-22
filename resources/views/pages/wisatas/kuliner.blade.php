@@ -6,7 +6,7 @@
 
 		<p class="mt-3">
 			Beberapa kuliner khas <br>
-            di sekitar Sumber Banteng
+            di sekitar Sumber Bantheng
 		</p>
 		{{-- <a href="{{ route('public.list_wisata') }}" class="btn btn-get-started px-4 mt-4"> --}}
 			{{-- Destinasi Wisata --}}
