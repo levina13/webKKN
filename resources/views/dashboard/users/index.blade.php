@@ -85,10 +85,14 @@
                     data:'action',
                     name:'action',
                     "render":function(data, type, full, meta){
+                        var button="";
+                        if (data[0]==1) {
+                            button = " disabled";
+                        }
                         if (data[2]==1) {
-                            return '<button type="button" class="btn btn-danger btn-sm btn-ubah-nonadmin" data-id="'+data[0]+'" data-nama="'+data[1]+'"data-admin="'+data[2]+'">Ubah Non Admin</button>';
+                            return '<button type="button" class="btn btn-danger btn-sm btn-ubah-nonadmin'+button+'" data-id="'+data[0]+'" data-nama="'+data[1]+'"data-admin="'+data[2]+'">Ubah Non Admin</button>';
                         }else{
-                            return '<button type="button" class="btn btn-success btn-sm btn-ubah-admin" data-id="'+data[0]+'" data-nama="'+data[1]+'"data-admin="'+data[2]+'">Ubah Admin</button>';
+                            return '<button type="button" class="btn btn-success btn-sm btn-ubah-admin'+button+'" data-id="'+data[0]+'" data-nama="'+data[1]+'"data-admin="'+data[2]+'">Ubah Admin</button>';
                         }
                     },
                   },
@@ -98,7 +102,7 @@
         });
     </script>
     <script>
-        $(document).on('click', '.btn-ubah-nonadmin', function (e) { 
+        $(document).on('click', '.btn-ubah-nonadmin', function (e) {
             e.preventDefault();
             var nama = $(this).data('nama');
             var id = $(this).data('id');

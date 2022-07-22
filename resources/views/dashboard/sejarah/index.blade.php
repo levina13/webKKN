@@ -87,7 +87,17 @@
                   },
                   {
                     data: 'isi',
-                    name: 'isi'
+                    name: 'isi',
+                    "render": function ( data, type, full, meta ) { 
+                        // return '<a href="/admin-page/pariwisata/'+ data[0] +'/edit" class="btn btn-sm btn-warning btn-edit me-2" data-id="'+ data[0] +'" data-nama="'+ data[1] +'"><i class="fas fa-pencil me-2"></i>Edit</a> <button class="btn btn-sm btn-danger btn-delete" data-id="'+ data[0] +'" data-nama="'+ data[1] +'"><i class="fas fa-trash me-2"></i>Hapus</button>'
+                        var isi = data.substring(0, 100);
+                        if (data.length>100) {
+                            return isi+'....';
+                            
+                        } else {
+                            return isi;
+                        }
+                    },
                   },
                   {
                     data: 'action', 

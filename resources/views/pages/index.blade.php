@@ -114,7 +114,7 @@
 				</div>
 			</div>
 		</section>
-		<section class="section section-testimonial-content" id="testimonialContent" style="margin-top: -420px">
+		<section class="section section-testimonial-content" id="testimonialContent" style="margin-top: -380px">
 			<div class="container">
 
 				<div class="row mt-4 mb-4  justify-content-center">
@@ -124,13 +124,19 @@
 								@php
 									$pos = strpos($berita->isi, '</p>')
 								@endphp
-								<div class="row justify-content-center">
-								<img class="col-10 img-fluid" style="max-height: 250px;" src="{{ urlencode($berita->foto) }}" alt="gambar berita" />
-								</div>
 								<div class="card-body">
-								<h5 class="card-title">{{$berita->judul}}</h5>
-								<p class="card-text">{!!substr($berita->isi, 0, $pos+4)!!}.....</p>
-								<a href="{{ route('public.isiBerita', $berita->id_berita) }}" class="btn btn-primary">Full Story</a>
+									<div class="row justify-content-center">
+										<h5 class="card-title">{{$berita->judul}}</h5>
+									</div>
+									<div class="row justify-content-center">
+										<div class="col-4">
+											<img class="img-fluid" style="" src="{{ urlencode($berita->foto) }}" alt="gambar berita" />
+										</div>
+										<div class="col-8 card-body">
+											<p class="card-text">{!!substr($berita->isi, 0, $pos+4)!!}.....</p>
+											<a href="{{ route('public.isiBerita', $berita->id_berita) }}" class="btn btn-primary">Full Story</a>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
