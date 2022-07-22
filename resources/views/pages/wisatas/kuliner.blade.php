@@ -25,8 +25,8 @@
 				    <div class="row pt-4 gx-4 gy-4 d-flex justify-content-center">
                         @foreach ($kuliners as $kuliner)
                             <div class="col-md-3 col-6 col-sm-5 mb-4">
-                                <div class="card" ">
-                                    <img class="card-img-top" src="{{ urlencode($kuliner->foto) }}" alt="gambar" />
+                                <div class="card" style="height: 100%">
+                                    <img class="card-img-top" style="max-height: 150px" src="{{ urlencode($kuliner->foto) }}" alt="{{$kuliner->nama}}" />
                                     <div class="card-body">
                                         <h5 class="card-title">{{$kuliner->nama}}</h5>
                                         <p class="card-text">{!! $kuliner->deskripsi !!}</p>

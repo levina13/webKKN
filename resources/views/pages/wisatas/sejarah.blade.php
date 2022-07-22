@@ -29,7 +29,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-5">
-                    <div class="text-container">
+                    <div class="text-container" style="color: black !important">
                         {!!$sejarah->isi!!}
                     </div> <!-- end of text-container -->
                 </div> <!-- end of col -->

@@ -81,9 +81,9 @@
 				<div class="row pt-4 gx-4 gy-4 d-flex justify-content-center">
 					@foreach ($kuliners as $kuliner)
 						<div class="col-md-3 col-6 col-sm-5 mb-4">
-							<div class="card" ">
-								<img class="card-img-top" src="{{ urlencode($kuliner->foto) }}" alt="gambar" />
-								<div class="card-body">
+							<div class="card" style="height: 100%">
+								<img class="card-img-top p-2" style="max-height: 150px" src="{{ urlencode($kuliner->foto) }}" alt="gambar" />
+								<div class="card-body" >
 									<h5 class="card-title">{{$kuliner->nama}}</h5>
 									<p class="card-text">{!! $kuliner->deskripsi !!}</p>
 								</div>
@@ -120,11 +120,13 @@
 				<div class="row mt-4 mb-4  justify-content-center">
 					@foreach($beritas as $berita)
 						<div class="col-lg-6 col-sm-10 col-md-8 mb-2">
-							<div class="card" style="">
+							<div class="card" style="height:100%">
 								@php
 									$pos = strpos($berita->isi, '</p>')
 								@endphp
-								<img class="card-img-top" src="{{ urlencode($berita->foto) }}" alt="...." />
+								<div class="row justify-content-center">
+								<img class="col-10 img-fluid" style="max-height: 250px;" src="{{ urlencode($berita->foto) }}" alt="gambar berita" />
+								</div>
 								<div class="card-body">
 								<h5 class="card-title">{{$berita->judul}}</h5>
 								<p class="card-text">{!!substr($berita->isi, 0, $pos+4)!!}.....</p>

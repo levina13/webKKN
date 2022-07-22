@@ -26,11 +26,13 @@
                           <div class="row mt-4 mb-4  justify-content-center">
                             @foreach ($beritas as $berita)
                               <div class="col-lg-6 col-sm-10 col-md-8 mb-2">
-                                  <div class="card" style="">
+                                  <div class="card" style="height:100%">
                                     @php
                                         $pos = strpos($berita->isi, '</p>')
                                     @endphp
-                                      <img class="card-img-top" src="{{ urlencode($berita->foto) }}" alt="...." />
+                                      <div class="row justify-content-center">
+                                        <img class="col-10" style="max-height: 250px; width:auto; max-width:100%" src="{{ urlencode($berita->foto) }}" alt="gambar berita" />
+                                      </div>
                                       <div class="card-body">
                                         <h5 class="card-title">{{$berita->judul}}</h5>
                                         <p class="card-text">{!!substr($berita->isi, 0, $pos+4)!!}.....</p>
