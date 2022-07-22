@@ -8,6 +8,7 @@ use App\Http\Controllers\Dashboard\KecamatanController;
 use App\Http\Controllers\Dashboard\KulinerController;
 use App\Http\Controllers\Dashboard\ObjekPariwisataController;
 use App\Http\Controllers\Dashboard\PageController;
+use App\Http\Controllers\Dashboard\SejarahController;
 use App\Http\Controllers\Dashboard\UserController;
 use App\Http\Controllers\Wisata\ScheduleController;
 use App\Http\Controllers\PageController as PublicPageController;
@@ -105,6 +106,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
         Route::resource('kuliner', KulinerController::class);
         Route::resource('berita', BeritaController::class);
         Route::resource('galeri', GaleriController::class);
+        Route::resource('sejarah', SejarahController::class);
     });
 });
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth', 'admin']], function () {

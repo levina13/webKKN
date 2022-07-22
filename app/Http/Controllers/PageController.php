@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Berita;
 use App\Models\Galeri;
 use App\Models\Kuliner;
+use App\Models\sejarah;
 
 class PageController extends Controller
 {
@@ -17,8 +18,9 @@ class PageController extends Controller
             ->orderBy('kuliners.created_at', 'DESC')->take(4)->get();
         $beritas = Berita::select('beritas.*')
             ->orderBy('beritas.created_at', 'DESC')->take(2)->get();
-
-        return view('pages.index', ['kuliners'=>$kuliners, 'beritas'=>$beritas, 'galeris'=>$galeris]);
+        $sejarahs = sejarah::select('sejarahs.*')
+        ->orderBy('sejarahs.id_sejarah')->first();
+        return view('pages.index', ['kuliners'=>$kuliners, 'beritas'=>$beritas, 'galeris'=>$galeris, 'sejarah'=>$sejarahs]);
     }
 
     public function kuliner(){
@@ -27,11 +29,13 @@ class PageController extends Controller
         return view('pages.wisatas.kuliner', ['kuliners'=>$kuliners]);
     }
     public function sejarah(){
-        return view('pages.wisatas.sejarah');
+        $sejarahs = sejarah::select('sejarahs.*')
+            ->orderBy('sejarahs.id_sejarah', 'DESC')->first();
+        return view('pages.wisatas.sejarah', ['sejarah' => $sejarahs]);
     }
     public function listBerita(){
         $beritas = Berita::select('beritas.*')
-            ->orderBy('beritas.created_at', 'DESC')->paginate(8);
+            ->orderBy('beritas.created_at')->paginate(8);
         return view('pages.wisatas.berita.berita_index', ['beritas' => $beritas]);
     }
     public function isiBerita($id){

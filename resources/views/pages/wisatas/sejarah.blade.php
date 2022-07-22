@@ -23,20 +23,12 @@
             <div class="row">
                 <div class="col-lg-5">
                     <div class="text-container">
-                        <div class="section-title">INTRO</div>
-                        <h2><b>Sejarah Singkat Wisata Sumber Banteng, Tempurejo, Kediri</b></h2>
-                        <p>Wisata Sumber Banteng berada di pinggiran Kota Kediri. Tepatnya berada di Kelurahan Tempurejo, Kecamatan Pesantren, Kota Kediri.
-                            Mulai dikelola menjadi tempat wisata berawal dari kepedulian komunitas kepada lingkungan sekitar.
-                            Pada tahun 2014 Pemerintah Daerah masih melakukan pemetaan tempat wisata yang berada di lingkup area Kota Kediri. Salah satunya area Wisata Sumber Banteng.
-                            Debit air sumber banteng saat itu masih kecil dan alirannya juga belum terlalu lancar. </p>
-                        <p class="testimonial-text">"Jadi tahun 2016 itu mulai dirawat dan dilestarikan menjadi tempat wisata, namun masih seadanya saja. Sebetulnya tidak ada niatan cuman biar
-                        bisa melestarikan sumber saja agar aliran dan debit airnya meningkat"</p>
-                        <div class="testimonial-author">Budi Santoso - Relawan Sumber Banteng</div>
+                        {!!$sejarah->isi!!}
                     </div> <!-- end of text-container -->
                 </div> <!-- end of col -->
                 <div class="col-lg-7">
                     <div class="image-container">
-                        <img class="img-fluid" src="images/wisata/sb.jpg" alt="alternative">
+                        <img class="img-fluid" src="{{ urlencode($sejarah->foto) }}" alt="alternative">
                     </div> <!-- end of image-container -->
                 </div> <!-- end of col -->
             </div> <!-- end of row -->

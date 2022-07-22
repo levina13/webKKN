@@ -185,6 +185,14 @@
                         <span class="sidebar-text">Galeri</span>
                     </a>
                 </li>
+                <li class="nav-item {{ (request()->is('dashboard/sejarah*')) ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('sejarah.index') }}">
+                        <span class="sidebar-icon">
+                            <i class="fa-solid fa-book"></i>
+                        </span>
+                        <span class="sidebar-text">Sejarah</span>
+                    </a>
+                </li>
 
 
                 <li role="separator" class="dropdown-divider mt-4 mb-3 border-gray-700"></li>

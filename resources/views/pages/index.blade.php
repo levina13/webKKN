@@ -40,10 +40,11 @@
 								</div> <!-- end of col -->
 								<div class="col-lg-5">
 									<div class="text-container">
-										<p>Wisata Sumber Banteng berada di pinggiran Kota Kediri. Tepatnya berada di Kelurahan Tempurejo, Kecamatan Pesantren, Kota Kediri.
-											Mulai dikelola menjadi tempat wisata berawal dari kepedulian komunitas kepada lingkungan sekitar.
-											Pada tahun 2014 Pemerintah Daerah masih melakukan pemetaan tempat wisata yang berada di lingkup area Kota Kediri. Salah satunya area Wisata Sumber Banteng.
-											Debit air sumber banteng saat.....<a href="{{route('public.sejarah')}}">Baca Selengkapnya>></a></p>
+										@php
+											$pos = strpos($sejarah->isi, '</p>')
+										@endphp
+
+										{!!substr($sejarah->isi, 0, $pos)!!}.....<a href="{{route('public.sejarah')}}">Baca Selengkapnya>></a></p>
 									</div> <!-- end of text-container -->
 								</div> <!-- end of col -->
 
