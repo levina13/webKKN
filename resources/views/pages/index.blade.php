@@ -1,6 +1,6 @@
 @extends('layouts.public')
 @section('layout_title', 'Home')
-@section('page_title', 'Wisata Sumber Banteng')
+@section('page_title', 'Wisata Sumber Bantheng')
 @section('layout_content')
 
 		<div class="mt-6">
@@ -18,7 +18,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col text-center section-popular-heading">
-					<h2>Sejarah Singkat Wisata Sumber Banteng</h2>
+					<h2>Sejarah Singkat Wisata Sumber Bantheng</h2>
 					</div>
 
 
@@ -69,7 +69,7 @@
 							<div class="col text-center">
 								<h2>Kuliner</h2>
 								<p>
-									Lihat Kuliner Apa Saja Yang Ada di Wisata Sumber Banteng
+									Lihat Kuliner Apa Saja Yang Ada di Wisata Sumber Bantheng
 								</p>
 							</div>
 						</div>
@@ -108,7 +108,7 @@
 					<div class="col text-center">
 						<h2>Berita</h2>
 						<p>
-							Lihat Ada Apa Saja Yang Ada di Wisata Sumber Banteng
+							Lihat Ada Apa Saja Yang Ada di Wisata Sumber Bantheng
 						</p>
 					</div>
 				</div>

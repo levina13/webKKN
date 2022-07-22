@@ -104,7 +104,7 @@
     class="d-flex justify-content-center justify-content-lg-between p-2 mt-1 border-bottom"
   >
     <!-- Left -->
-    <div class="me-5 d-none d-lg-block">
+    <div class="">
       <span>Get connected with us on social networks:</span>
 
       <a href="" class="me-4 text-reset">
@@ -164,7 +164,7 @@
   <!-- Copyright -->
   <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
     © 2022 Copyright:
-    <a class="text-reset fw-bold" href="https://mdbootstrap.com/">Wisata Sumber Banteng</a>
+    <a class="text-reset fw-bold" href="https://mdbootstrap.com/">Wisata Sumber Bantheng</a>
   </div>
   <!-- Copyright -->
 </footer>
