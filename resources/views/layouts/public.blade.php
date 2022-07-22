@@ -5,8 +5,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 	<title>@yield('layout_title') | {{ config('app.name') }}</title>
-	<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/brand/holiyou.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/brand/holiyou.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/images/wisata/kkn.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/wisata/kkn.png">
 	<link rel="stylesheet" href="/frontend/libraries/bootstrap/css/bootstrap.css" />
 	<link href="https://fonts.googleapis.com/css?family=Assistant:200,300,400,600,700,800|Playfair+Display:400,400i,700,700i,900,900i&display=swap" rel="stylesheet" />
 	<link rel="stylesheet" href="/frontend/styles/main.css" />
@@ -22,7 +22,7 @@
 	<div class="container sticky-top">
 		<nav class="row navbar navbar-expand-lg navbar-light bg-white">
 			<a href="{{ route('index') }}" class="navbar-brand">
-				<img src="{{ asset('assets/img/brand/holiyou.png') }}" alt="Logo" />
+				<img src="{{ asset('images/wisata/kkn') }}" alt=" " />
 			</a>
 			<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb">
 				<span class="navbar-toggler-icon"></span>
@@ -107,20 +107,17 @@
     <div class="">
       <span>Get connected with us on social networks:</span>
 
-      <a href="" class="me-4 text-reset">
-        <i class="fab fa-facebook-f"></i>
-      </a>
-      <a href="" class="me-4 text-reset">
-        <i class="fab fa-twitter"></i>
-      </a>
-      <a href="" class="me-4 text-reset">
-        <i class="fab fa-google"></i>
-      </a>
-      <a href="" class="me-4 text-reset">
+      <a target="_blank" href="https://www.instagram.com/official_sumberbanteng/" class="me-1 text-reset">
         <i class="fab fa-instagram"></i>
       </a>
-      <a href="" class="me-4 text-reset">
-        <i class="fab fa-linkedin"></i>
+      <a target="_blank" href="https://vt.tiktok.com/ZSR8PsAfC/" class="me-1 text-reset">
+        <i class="fab fa-tiktok"></i>
+      </a>
+      <a target="_blank" href="https://youtube.com/channel/UCHT54kTXVf4LdhGfiTJ_hMw" class="me-1 text-reset">
+        <i class="fab fa-youtube"></i>
+      </a>
+      <a target="_blank" href="sumberbantheng@gmail.com" class="me-1 text-reset">
+        <i class="fab fa-google"></i>
       </a>
     </div>
     <!-- Left -->
@@ -143,16 +140,15 @@
         <!-- Grid column -->
         <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
           <!-- Links -->
-          <h6 class="text-uppercase fw-bold mb-4">
-            <i class="fa-regular fa-circle-user"></i>
-            Contact
           </h6>
-          <p><i class="fas fa-home me-3"></i> Malang, ML 1102, INDONESIA</p>
+          <p><i class="fab fa-instagram me-2"></i> official_sumberbanteng</p>
+          <p><i class="fab fa-tiktok me-2"></i> official_sumberbanteng</p>
+          <p><i class="fab fa-youtube me-2"></i> Official Sumber Banteng</p>
           <p>
-            <i class="fas fa-envelope me-3"></i>
-            sumberbanteng@gmail.com
+            <i class="fas fa-envelope me-2"></i>
+            sumberbantheng@gmail.com
           </p>
-          <p><i class="fas fa-phone me-3"></i> + 0341 5943</p>
+
         </div>
         <!-- Grid column -->
       </div>

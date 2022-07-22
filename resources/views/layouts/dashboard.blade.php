@@ -26,8 +26,8 @@
 
     <!-- Favicon -->
     {{-- <link rel="apple-touch-icon" sizes="120x120" href="/assets/img/favicon/apple-touch-icon.png"> --}}
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/brand/holiyou.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/brand/holiyou.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/wisata/kkn.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/wisata/kkn.png">
     <link rel="manifest" href="/assets/img/favicon/site.webmanifest">
     <link rel="mask-icon" href="/assets/img/favicon/safari-pinned-tab.svg" color="#ffffff">
     <meta name="msapplication-TileColor" content="#ffffff">
@@ -124,9 +124,9 @@
                 <li class="nav-item">
                     <a href="{{ route('index') }}" class="nav-link d-flex align-items-center">
                         <span class="sidebar-icon">
-                            <img src="/assets/img/brand/holiyou.png" height="30" width="30" alt="Volt Logo">
+                            <img src="/images/wisata/kkn.png" height="30" width="30" alt="Volt Logo">
                         </span>
-                        <span class="mt-1 ms-1 sidebar-text">HOLIYOU</span>
+                        <span class="mt-1 ms-1 sidebar-text">SumberBantheng</span>
                     </a>
                 </li>
                 <li class="nav-item {{ (request()->is('dashboard')) ? 'active' : '' }}">
@@ -267,20 +267,17 @@
     <div class="me-5 d-none d-lg-block">
       <span>Get connected with us on social networks:</span>
 
-      <a href="" class="me-1 text-reset">
-        <i class="fab fa-facebook-f"></i>
-      </a>
-      <a href="" class="me-1 text-reset">
-        <i class="fab fa-twitter"></i>
-      </a>
-      <a href="" class="me-1 text-reset">
-        <i class="fab fa-google"></i>
-      </a>
-      <a href="" class="me-1 text-reset">
+      <a target="_blank" href="https://www.instagram.com/official_sumberbanteng/" class="me-1 text-reset">
         <i class="fab fa-instagram"></i>
       </a>
-      <a href="" class="me-1 text-reset">
-        <i class="fab fa-linkedin"></i>
+      <a target="_blank" href="https://vt.tiktok.com/ZSR8PsAfC/" class="me-1 text-reset">
+        <i class="fab fa-tiktok"></i>
+      </a>
+      <a target="_blank" href="https://youtube.com/channel/UCHT54kTXVf4LdhGfiTJ_hMw" class="me-1 text-reset">
+        <i class="fab fa-youtube"></i>
+      </a>
+      <a target="_blank" href="sumberbantheng@gmail.com" class="me-1 text-reset">
+        <i class="fab fa-google"></i>
       </a>
     </div>
     <!-- Left -->
@@ -311,12 +308,13 @@
             <i class="fa-regular fa-circle-user"></i>
             Contact
           </h6>
-          <p><i class="fas fa-home me-2"></i> Malang, ML 1102, INDONESIA</p>
+          <p><i class="fab fa-instagram me-2"></i> official_sumberbanteng</p>
+          <p><i class="fab fa-tiktok me-2"></i> official_sumberbanteng</p>
+          <p><i class="fab fa-youtube me-2"></i> Official Sumber Banteng</p>
           <p>
-            <i class="fas fa-envelope me-3"></i>
-            sumberbanteng@gmail.com
+            <i class="fas fa-envelope me-2"></i>
+            sumberbantheng@gmail.com
           </p>
-          <p><i class="fas fa-phone me-3"></i> + 0341 5943</p>
         </div>
         <!-- Grid column -->
       </div>
@@ -328,7 +326,7 @@
   <!-- Copyright -->
   <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
     © 2022 Copyright:
-    <a class="text-reset fw-bold" href="https://mdbootstrap.com/">Wisata Sumber Banteng</a>
+    <a class="text-reset fw-bold" href="https://mdbootstrap.com/">Wisata Sumber Bantheng</a>
   </div>
   <!-- Copyright -->
 </footer>
