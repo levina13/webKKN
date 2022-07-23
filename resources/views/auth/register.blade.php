@@ -8,12 +8,12 @@
                     <div class="row">
                         <div class="col-2">
                             <a href="{{route('index')}}">
-                                <img src="{{ asset('assets/img/brand/holiyou.png') }}" width="50" height="50" alt="Logo" /> 
+                                <img src="{{ asset('assets/img/brand/kkn.png') }}" width="50" height="50" alt="Logo" /> 
                             </a>
                         </div>
                         <div class="pl-5 col-10" style="padding-left:25px">
                             <h1 class="mb-0 ml-5 h3">
-                            SUMBER Bantheng</h1> <br>
+                            SUMBER BANTHENG</h1> <br>
                         </div>
                     </div>
                         <div class="row">

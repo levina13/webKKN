@@ -49,11 +49,16 @@ class AuthController extends Controller
 
     public function store(UserRegisterRequest $request)
     {
+        $isiTabel = User::select('users.*')->first();
+
         $data = $request->validated();
         $user           = new User();
         $user->name     = $data['name'];
         $user->username = $data['username'];
         $user->email    = $data['email'];
+        if (empty($isiTabel)) {
+            $user->is_admin=1;
+        }
         $user->password = Hash::make($data['password']);
         if ($user->save()) {
             $alert = [
