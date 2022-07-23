@@ -6,8 +6,8 @@
 		<div class="mt-6">
 			<div class="row-fluid  d-flex justify-content-center mt-4">
 				<div class="col-lg-6 col-sm-10 col-md-8">
-					<iframe width="80%" height="300vh" src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1">
-					</iframe>
+					{{-- <iframe width="80%" height="300vh" src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1">
+					</iframe> --}}
 				</div>
 			</div>
 		</div>
