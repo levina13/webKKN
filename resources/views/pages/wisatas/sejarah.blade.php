@@ -1,6 +1,6 @@
 @extends('layouts.public')
 @section('layout_title', 'Sejarah')
-@section('page_title', 'Sejarah Wisata Sumber Bantheng')
+@section('page_title', 'Sejarah Wisata Sumber Banteng')
 @section('layout_content')
 <link rel="stylesheet" href="/layoutsejarah.css" />
 		{{-- <p class --}}

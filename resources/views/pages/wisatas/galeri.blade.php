@@ -1,6 +1,6 @@
 @extends('layouts.public')
 @section('layout_title', 'Galeri')
-@section('page_title', 'Galeri Sumber Bantheng')
+@section('page_title', 'Galeri Sumber Banteng')
 @section('layout_content')
 		{{-- <a href="{{ route('public.list_wisata') }}" class="btn btn-get-started px-4 mt-4"> --}}
 			{{-- Destinasi Wisata --}}

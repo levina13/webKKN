@@ -13,7 +13,7 @@
                         </div>
                         <div class="pl-5 col-10" style="padding-left:25px">
                             <h1 class="mb-0 ml-5 h3">
-                            SUMBER BANTHENG</h1>
+                            SUMBER BANTENG</h1>
                         </div>
                     </div>
                 </div>

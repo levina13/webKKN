@@ -7,7 +7,7 @@
 
 		<p class="mt-3">
 			Kumpulan berita terbaru <br>
-            di Wisata Sumber Bantheng
+            di Wisata Sumber Banteng
 		</p>
 		{{-- <a href="{{ route('public.list_wisata') }}" class="btn btn-get-started px-4 mt-4"> --}}
 			{{-- Destinasi Wisata --}}
