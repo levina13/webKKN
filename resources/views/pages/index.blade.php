@@ -41,11 +41,12 @@
 							</div> <!-- end of col -->
 							<div class="col-lg-5">
 								<div class="text-container">
-									@php
-										$pos = strpos($sejarah->isi, '</p>')
-									@endphp
+								@php
+									$posSejarah = strpos($sejarah->isi, '.');
+									$posSejarah = strpos ($sejarah->isi, '.', $posSejarah+1); //find second dot using offset
+								@endphp
 
-									{!!substr($sejarah->isi, 0, $pos)!!}.....<a href="{{route('public.sejarah')}}">Baca Selengkapnya>></a></p>
+									{!!substr($sejarah->isi, 0, $posSejarah)!!}.....<a href="{{route('public.sejarah')}}">Baca Selengkapnya>></a></p>
 								</div> <!-- end of text-container -->
 							</div> <!-- end of col -->
 
@@ -124,7 +125,7 @@
 						<div class="col-lg-6 col-sm-10 col-md-8 mb-2">
 							<div class="card" style="height:100%">
 								@php
-									$pos = strpos($berita->isi, '</p>')
+									$posberita = strpos($berita->isi, '.');
 								@endphp
 								<div class="card-body">
 									<div class="row justify-content-center">
@@ -135,7 +136,7 @@
 											<img class="img-fluid" style="" src="{{ urlencode($berita->foto) }}" alt="gambar berita" />
 										</div>
 										<div class="col-8 card-body">
-											<p class="card-text">{!!substr($berita->isi, 0, $pos+4)!!}.....</p>
+											<p class="card-text">{!!substr($berita->isi, 0, $posberita)!!}.....</p>
 											<a href="{{ route('public.isiBerita', $berita->id_berita) }}" class="btn btn-primary">Full Story</a>
 										</div>
 									</div>

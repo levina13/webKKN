@@ -89,7 +89,7 @@
 	</div>
     <!-- Header -->
 	<header class="text-center">
-		<h1>
+		<h1 style="-webkit-text-stroke: 1px black;">
 			@yield('page_title')
 		</h1>
 

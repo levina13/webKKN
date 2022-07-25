@@ -126,7 +126,7 @@ Route::get('/berita', function (Request $request) {
             ->addColumn('action', function ($row) {
                 $data = [
                     $row->id_berita,
-                    $row->nama
+                    $row->judul
                 ];
                 return $data;
             })

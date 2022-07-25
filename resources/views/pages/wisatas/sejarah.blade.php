@@ -28,11 +28,9 @@
                                                 </div> <!-- end of image-container -->
                                             </div> <!-- end of col -->
                                         </div>
-                                        <div class="row">
-                                            <div class="col-lg-5">
-                                                <div class="text-container" style="color: black !important">
+                                        <div class="row justify-content-center mt-2">
+                                            <div class="col-10" style="padding: auto">
                                                     {!!$sejarah->isi!!}
-                                                </div> <!-- end of text-container -->
                                             </div> <!-- end of col -->
                                         </div> <!-- end of row -->
                                     </div> <!-- end of container -->
