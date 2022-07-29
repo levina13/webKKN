@@ -85,17 +85,21 @@ Route::get('/wisata', function (Request $request) {
 Route::get('/user', function (Request $request) {
     if ($request->ajax()) {
         $data = User::select('users.*')
-        ->orderBy('users.name', 'ASC')->get();
+        ->orderBy('users.id', 'ASC')->get();
         return DataTables::of($data)
             ->addIndexColumn()
             ->addColumn('action', function ($row) {
                 $data = [
                     $row->id,
                     $row->name,
-                    $row->is_admin
+                    $row->is_admin,
                 ];
                 return $data;
             })
+            ->make(true);
+        
+        return DataTables::of($data)
+            ->addIndexColumn()
             ->make(true);
     }
 })->name('api.user');

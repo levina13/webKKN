@@ -104,6 +104,15 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::where('id', $id)->first();
+        if ($user != null) {
+            try {
+                $user->delete();
+                return true;
+            } catch (Exception $e) {
+                return false;
+            }
+        }
+        return false;
     }
 }

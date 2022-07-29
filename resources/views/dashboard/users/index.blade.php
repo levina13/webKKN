@@ -34,6 +34,11 @@
                     <div class="table-responsive">
                         <table class="table table-centered table-nowrap mb-0 rounded yajra-datatable w-100">
                             <thead>
+                                @php
+                                    $id= Auth::user()->id;
+                                @endphp
+                                <input type="hidden" id="id-now" value="{{$id}}">
+
                                 <tr>
                                     <th>No</th>
                                     <th>Nama</th>
@@ -53,7 +58,7 @@
 @section('layout_script')
     <script>
         $(function () {
-          
+          var idNow  = $("#id-now").val();
           var table = $('.yajra-datatable').DataTable({
               processing: true,
               serverSide: true,
@@ -86,16 +91,16 @@
                     name:'action',
                     "render":function(data, type, full, meta){
                         var button="";
-                        if (data[0]==1) {
+                        if (data[0]==1 || idNow!=1) {
                             button = " disabled";
                         }
                         if (data[2]==1) {
-                            return '<button type="button" class="btn btn-danger btn-sm btn-ubah-nonadmin'+button+'" data-id="'+data[0]+'" data-nama="'+data[1]+'"data-admin="'+data[2]+'">Ubah Non Admin</button>';
+                            return '<button type="button" class="btn btn-secondary btn-sm btn-ubah-nonadmin'+button+'" data-id="'+data[0]+'" data-nama="'+data[1]+'"data-admin="'+data[2]+'">Ubah Non Admin</button> <button type="button" class="btn btn-danger btn-sm btn-hapus'+button+'" data-id="'+data[0]+'" data-nama="'+data[1]+'"data-admin="'+data[2]+'">Hapus</button>';
                         }else{
-                            return '<button type="button" class="btn btn-success btn-sm btn-ubah-admin'+button+'" data-id="'+data[0]+'" data-nama="'+data[1]+'"data-admin="'+data[2]+'">Ubah Admin</button>';
+                            return '<button type="button" class="btn btn-success btn-sm btn-ubah-admin'+button+'" data-id="'+data[0]+'" data-nama="'+data[1]+'"data-admin="'+data[2]+'">Ubah Admin</button> <button type="button" class="btn btn-danger btn-sm btn-hapus'+button+'" data-id="'+data[0]+'" data-nama="'+data[1]+'"data-admin="'+data[2]+'">Hapus</button>';
                         }
                     },
-                  },
+                 },
               ]
           });
           
@@ -215,6 +220,65 @@
                             Swal.fire({
                                 title: 'Gagal!',
                                 text: 'Status gagal diubah.',
+                                icon: 'error',
+                                showConfirmButton: false,
+                                timer: 1500
+                            });
+                        }
+                    }).always(function (data) {
+                        $('.yajra-datatable').DataTable().draw(false);
+                    });
+                }
+            })
+        });
+        $(document).on('click', '.btn-hapus', function (e) { 
+            e.preventDefault();
+            var nama = $(this).data('nama');
+            var id = $(this).data('id');
+
+            Swal.fire({
+                icon: 'warning',
+                title: 'Hapus '+nama+'?',
+                text: 'Data yang terhapus tidak dapat dikembalikan.',
+                showCancelButton: true,
+                confirmButtonText: 'Hapus',
+                cancelButtonText: 'Batal'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });
+                    $.ajax({
+                        url: '/admin-page/user/'+id,
+                        type: 'DELETE',
+                        dataType: 'html',
+                        data: {method: '_DELETE', submit: true},
+
+                        success: function(data) {
+                            if (data == true) {
+                                Swal.fire({
+                                    title: 'Dihapus!',
+                                    text: 'User berhasil dihapus.',
+                                    icon: 'success',
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                });
+                            } else {
+                                Swal.fire({
+                                    title: 'Gagal!',
+                                    text: 'User gagal dihapus.',
+                                    icon: 'error',
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                });
+                            }
+                        },
+                        error: function(){
+                            Swal.fire({
+                                title: 'Gagal!',
+                                text: 'User gagal dihapus.',
                                 icon: 'error',
                                 showConfirmButton: false,
                                 timer: 1500
